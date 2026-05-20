@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Insights — Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #F97316;
+    --orange-light: #FED7AA;
+    --orange-pale: #FFF7ED;
+    --dark: #1C1A17;
+    --mid: #4B4540;
+    --muted: #8A8278;
+    --border: #E8E2DA;
+    --bg: #FAFAF8;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+  }
+
+  /* LOGO — image only, no text */
+  .nav-logo {
+    display: flex; align-items: center;
+    text-decoration: none; flex-shrink: 0;
+  }
+  .logo-mark {
+    height: 44px; width: auto;
+  }
+  .logo-mark img {
+    height: 100%; width: auto; object-fit: contain; display: block;
+  }
+
+  /* CENTER LINKS */
+  .nav-links {
+    display: flex; gap: 36px; list-style: none;
+    position: absolute; left: 50%; transform: translateX(-50%);
+  }
+  .nav-links a {
+    text-decoration: none; font-size: 15px; font-weight: 500;
+    color: var(--mid); transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--orange); }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; padding: 4px; background: none; border: none;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--dark); border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* MOBILE MENU */
+  .mobile-menu {
+    display: none;
+    position: fixed; top: 68px; left: 0; right: 0;
+    background: white; border-bottom: 1px solid var(--border);
+    padding: 16px 24px 20px; z-index: 99;
+    flex-direction: column; gap: 0;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    text-decoration: none; font-size: 15px; font-weight: 500;
+    color: var(--mid); padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--orange); }
+  .mobile-menu .nav-cta-mobile {
+    margin-top: 12px; background: var(--orange); color: white;
+    border: none; padding: 12px 24px; border-radius: 10px;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; text-align: center;
+  }
+
+  /* RIGHT SIDE */
+  .nav-right { display: flex; align-items: center; gap: 6px; }
+  .nav-cta {
+    background: var(--orange); color: white; border: none;
+    padding: 11px 24px; border-radius: 10px; font-size: 15px; font-weight: 600;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s; white-space: nowrap;
+  }
+  .nav-cta:hover { background: #EA6C0B; }
+
+  /* PAGE HEADER */
+  .page-header {
+    max-width: 1240px; margin: 0 auto;
+    padding: 52px 32px 28px;
+  }
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px; font-weight: 700; color: var(--dark);
+  }
+  .page-header h1 span { color: var(--orange); }
+  .page-header p {
+    font-size: 15px; color: var(--muted); margin-top: 6px;
+  }
+
+  /* 4-COL GRID */
+  .blog-grid {
+    max-width: 1240px; margin: 0 auto;
+    padding: 0 32px 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  /* CARD */
+  .post-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: 16px;
+    transition: box-shadow 0.22s, transform 0.22s;
+  }
+  .post-link:hover {
+    box-shadow: 0 10px 36px rgba(0,0,0,0.10);
+    transform: translateY(-3px);
+  }
+
+  .post-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex; flex-direction: column;
+    height: 100%;
+  }
+
+  /* THUMB — real image, aspect ratio matches 1792x1024 source */
+  .card-thumb {
+    width: 100%;
+    aspect-ratio: 1792 / 1024;   /* matches exact source dimensions */
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    background: #f0f0f0;
+  }
+  .card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.35s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  .post-link:hover .card-thumb img {
+    transform: scale(1.04);
+  }
+
+  /* BODY */
+  .card-body {
+    padding: 20px 20px 0;
+    flex: 1; display: flex; flex-direction: column;
+  }
+  .cat {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.09em; text-transform: uppercase;
+    margin-bottom: 9px;
+  }
+  .card-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--dark); line-height: 1.35; margin-bottom: 9px;
+  }
+  .card-body p {
+    font-size: 13px; color: var(--muted);
+    line-height: 1.65; flex: 1;
+  }
+
+  /* FOOTER */
+  .card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px 18px;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+  }
+  .read-time {
+    font-size: 12px; color: var(--muted);
+    display: flex; align-items: center; gap: 5px;
+  }
+  .tag {
+    font-size: 11px; font-weight: 600;
+    padding: 4px 12px; border-radius: 20px;
+  }
+  .tag-orange { background: #FFF7ED; color: #C2410C; }
+  .tag-green  { background: #F0FDF4; color: #166534; }
+  .tag-blue   { background: #EFF6FF; color: #1D4ED8; }
+  .tag-purple { background: #FDF4FF; color: #7E22CE; }
+  .tag-yellow { background: #FEFCE8; color: #854D0E; }
+  .tag-teal   { background: #F0FDFA; color: #115E59; }
+  .tag-pink   { background: #FFF1F2; color: #9F1239; }
+  .tag-lime   { background: #F7FEE7; color: #3F6212; }
+
+  /* SITE FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    padding: 32px 40px;
+    text-align: center;
+    color: var(--muted); font-size: 13px;
+  }
+  footer strong { color: var(--orange); }
+
+  /* ===================== RESPONSIVE ===================== */
+
+  /* Tablet: 2 columns */
+  @media (max-width: 1024px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 24px 60px;
+    }
+    .page-header { padding: 36px 24px 20px; }
+    .page-header h1 { font-size: 28px; }
+  }
+
+  /* Mobile: 1 column */
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; height: 60px; }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+      padding: 0 16px 48px;
+      gap: 16px;
+    }
+    .page-header { padding: 28px 16px 16px; }
+    .page-header h1 { font-size: 24px; }
+    .page-header p { font-size: 14px; }
+
+    footer { padding: 24px 16px; font-size: 12px; }
+
+    .mobile-menu { top: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <!-- LOGO — image only -->
+  <a href="https://solarsoftware.online" class="nav-logo">
+    <div class="logo-mark">
+      <img src="https://solarsoftware.online/wp-content/uploads/2026/01/Blue-orange-minimalist-solar-technology-logo-1-e1769857725378.png" alt="Solar Software Logo">
+    </div>
+  </a>
+
+  <!-- CENTER NAV (desktop) -->
+  <ul class="nav-links">
+    <li><a href="https://solarsoftware.online/#features">Features</a></li>
+    <li><a href="https://solarsoftware.online/#workflow">Workflow</a></li>
+    <li><a href="https://solarsoftware.online/#benefits">Benefits</a></li>
+    <li><a href="https://solarsoftware.online/#faq">FAQ</a></li>
+  </ul>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+    <button class="nav-cta">Get Free Demo</button>
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile dropdown menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://solarsoftware.online/#features">Features</a>
+  <a href="https://solarsoftware.online/#workflow">Workflow</a>
+  <a href="https://solarsoftware.online/#benefits">Benefits</a>
+  <a href="https://solarsoftware.online/#faq">FAQ</a>
+  <button class="nav-cta-mobile">Get Free Demo</button>
+</div>
+
+<div class="page-header">
+  <h1>Solar <span>Insights</span> Blog</h1>
+  <p>Expert guides, industry trends, and CRM best practices for solar businesses across India.</p>
+</div>
+
+<div class="blog-grid">
+
+  <!-- 1 -->
+  <a href="https://solarsoftware.online/how-solar-companies-can-3x-their-lead-conversion-with-smart-crm-workflows/" class="post-link">
+    <div class="post-card">
+      <div class="card-thumb">
+        <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1777377965/ChatGPT_Image_Apr_28_2026_05_19_56_PM_w3eqhx.png" alt="How Solar Companies Can 3x Lead Conversion">
+      </div>
+      <div class="card-body">
+        <div class="cat" style="color:#F97316">CRM Strategy</div>
+        <h3>How Solar Companies Can 3× Their Lead Conversion</h3>
+        <p>The exact automation playbook top installers use to close faster without hiring more staff.</p>
+      </div>
+      <div class="card-footer">
+        <div class="read-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 8 min read</div>
+        <span class="tag tag-orange">Featured</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 2 -->
+  <a href="https://solarsoftware.online/blog/solar-sales-team-2025" class="post-link">
+    <div class="post-card">
+      <div class="card-thumb">
+        <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1777377561/ChatGPT_Image_Apr_28_2026_05_20_16_PM_qnt7jn.png" alt="Building a High-Performance Solar Sales Team">
+      </div>
+      <div class="card-body">
+        <div class="cat" style="color:#16A34A">Team & Operations</div>
+        <h3>Building a High-Performance Solar Sales Team in 2025</h3>
+        <p>Hiring, training, and commission structures that top solar companies swear by.</p>
+      </div>
+      <div class="card-footer">
+        <div class="read-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 5 min read</div>
+        <span class="tag tag-green">Team</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 3 -->
+  <a href="https://solarsoftware.online/blog/mobile-crm-solar-2025" class="post-link">
+    <div class="post-card">
+      <div class="card-thumb">
+        <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1777377966/ChatGPT_Image_Apr_28_2026_05_20_37_PM_i53xzs.png" alt="Why Your Solar Business Needs a Mobile-Ready CRM">
+      </div>
+      <div class="card-body">
+        <div class="cat" style="color:#2563EB">Technology</div>
+        <h3>Why Your Solar Business Needs a Mobile-Ready CRM in 2025</h3>
+        <p>Field technicians can't be tied to a desk. Here's why mobile-first CRM transforms productivity.</p>
+      </div>
+      <div class="card-footer">
+        <div class="read-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4 min read</div>
+        <span class="tag tag-blue">Tech</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 4 -->
+  <a href="https://solarsoftware.online/blog/invoicing-payment-automation" class="post-link">
+    <div class="post-card">
+      <div class="card-thumb">
+        <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1777377965/ChatGPT_Image_Apr_28_2026_05_22_07_PM_bjdilc.png" alt="Invoicing and Payment Collection">
+      </div>
+      <div class="card-body">
+        <div class="cat" style="color:#9333EA">Finance</div>
+        <h3>Invoicing & Payment Collection: Stop Chasing Clients</h3>
+        <p>Automate your billing cycle so payments arrive on time — every time.</p>
+      </div>
+      <div class="card-footer">
+        <div class="read-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 7 min read</div>
+        <span class="tag tag-purple">Finance</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 5 -->
+  <a href="https://solarsoftware.online/blog/pm-surya-ghar-yojana-guide" class="post-link">
+    <div class="post-card">
+      <div class="card-thumb">
+        <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1777377965/ChatGPT_Image_Apr_28_2026_05_24_57_PM_jvvfsd.png" alt="PM Surya Ghar Yojana Guide">
+      </div>
+      <div class="card-body">
+        <div class="cat" style="color:#CA8A04">India Solar Market</div>
+        <h3>PM Surya Ghar Yojana: What Solar Installers Need to Know</h3>
+        <p>A complete breakdown of the subsidy scheme and how to help your customers claim it fast.</p>
+      </div>
+      <div class="card-footer">
+        <div class="read-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min read</div>
+        <span class="tag tag-yellow">Policy</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 6 -->
+  <a href="https://solarsoftware.online/blog/real-time-project-dashboards" class="post-link">
+    <div class="post-card">
+      <div class="card-thumb">
+        <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1777377965/ChatGPT_Image_Apr_28_2026_05_26_54_PM_sdseki.png" alt="Real-Time Project Dashboards">
+      </div>
+      <div class="card-body">
+        <div class="cat" style="color:#0D9488">Analytics</div>
+        <h3>Real-Time Updates That Keep Every Stakeholder Happy</h3>
+        <p>How live dashboards eliminate the endless status calls and keep solar projects on track.</p>
+      </div>
+      <div class="card-footer">
+        <div class="read-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4 min read</div>
+        <span class="tag tag-teal">Analytics</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 7 -->
+  <a href="https://solarsoftware.online/blog/cloud-data-security-solar" class="post-link">
+    <div class="post-card">
+      <div class="card-thumb">
+        <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1777377965/ChatGPT_Image_Apr_28_2026_05_35_29_PM_qrj7l2.png" alt="Bank-Grade Security for Solar Business Data">
+      </div>
+      <div class="card-body">
+        <div class="cat" style="color:#E11D48">Security</div>
+        <h3>Bank-Grade Security for Your Solar Business Data</h3>
+        <p>How cloud-based solar CRMs protect sensitive customer and financial data around the clock.</p>
+      </div>
+      <div class="card-footer">
+        <div class="read-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3 min read</div>
+        <span class="tag tag-pink">Security</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 8 -->
+  <a href="https://solarsoftware.online/blog/end-to-end-project-tracking" class="post-link">
+    <div class="post-card">
+      <div class="card-thumb">
+        <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1777377965/ChatGPT_Image_Apr_28_2026_05_31_39_PM_xrwas3.png" alt="Track Solar Installations End-to-End">
+      </div>
+      <div class="card-body">
+        <div class="cat" style="color:#65A30D">Project Management</div>
+        <h3>Track Solar Installations End-to-End Without Spreadsheets</h3>
+        <p>Replace Excel chaos with a centralised dashboard your whole team can use from anywhere.</p>
+      </div>
+      <div class="card-footer">
+        <div class="read-time"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 6 min read</div>
+        <span class="tag tag-lime">Ops</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+  // Close menu on outside click
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>

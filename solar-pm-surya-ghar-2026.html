@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM Surya Ghar Yojana: What Solar Installers Need to Know | Solar Blog</title>
+<meta name="description" content="A complete guide for Indian solar installers on PM Surya Ghar Muft Bijli Yojana — subsidy amounts, eligibility, registration process, documentation, and how to use it to close more deals.">
+<meta name="keywords" content="PM Surya Ghar Yojana, PM Surya Ghar Muft Bijli Yojana, solar subsidy India 2026, rooftop solar subsidy India, solar installer subsidy guide, DISCOM net metering India, solar CRM India, residential solar subsidy">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #F97316;
+    --orange-dark: #C2410C;
+    --orange-light: #FED7AA;
+    --orange-pale: #FFF7ED;
+    --dark: #18160F;
+    --mid: #44403C;
+    --muted: #78716C;
+    --light: #A8A29E;
+    --border: #E7E5E4;
+    --bg: #FAFAF9;
+    --white: #ffffff;
+    --ink: #1C1917;
+    --green: #16A34A;
+    --green-pale: #F0FDF4;
+    --blue: #2563EB;
+    --blue-pale: #EFF6FF;
+    --saffron: #FF6B00;
+    --india-green: #138808;
+    --india-blue: #000080;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    max-width: 780px; margin: 0 auto; padding: 24px 24px 0;
+    display: flex; gap: 6px; align-items: center;
+    font-size: 12px; color: var(--light); flex-wrap: wrap;
+  }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--orange); }
+
+  /* ── HERO ── */
+  .post-hero { max-width: 780px; margin: 0 auto; padding: 32px 24px 0; }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tag { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
+  .tag-primary { background: var(--orange-pale); color: var(--orange-dark); }
+  .tag-green   { background: var(--green-pale);  color: #166534; }
+  .tag-blue    { background: var(--blue-pale);   color: #1D4ED8; }
+
+  .post-title { font-family: 'Lora', serif; font-size: clamp(24px, 4vw, 42px); font-weight: 700; line-height: 1.25; color: var(--dark); margin-bottom: 18px; }
+  .post-title em { color: var(--orange); font-style: italic; }
+  .post-subtitle { font-size: clamp(15px, 2vw, 18px); color: var(--muted); font-weight: 300; line-height: 1.65; margin-bottom: 28px; max-width: 680px; }
+
+  .post-byline { display: flex; align-items: center; gap: 14px; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 36px; flex-wrap: wrap; }
+  .author-av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--orange-light), var(--orange)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: white; flex-shrink: 0; }
+  .byline-info { flex: 1; min-width: 160px; }
+  .author-name { font-size: 14px; font-weight: 600; color: var(--dark); }
+  .byline-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .byline-actions { display: flex; gap: 10px; }
+  .share-btn { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border); background: white; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: border-color .2s; }
+  .share-btn:hover { border-color: var(--orange); }
+
+  /* ── HERO VISUAL ── */
+  .hero-visual { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+  .hero-img-wrap { background: linear-gradient(135deg, #0A1628 0%, #0F2040 50%, #1A1205 100%); border-radius: 16px; height: 360px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .hero-grid-lines { position: absolute; inset: 0; opacity: .06; background-image: linear-gradient(var(--orange) 1px, transparent 1px), linear-gradient(90deg, var(--orange) 1px, transparent 1px); background-size: 40px 40px; }
+  .hero-glow { position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,0,.2) 0%, transparent 65%); }
+  .hero-glow2 { position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(19,136,8,.15) 0%, transparent 65%); }
+  .hero-center { position: relative; z-index: 2; text-align: center; padding: 0 16px; }
+  .hero-center-icon { width: 80px; height: 80px; border-radius: 20px; background: rgba(255,107,0,.15); border: 1px solid rgba(255,107,0,.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .hero-stat-row { display: flex; gap: 24px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+  .h-stat { text-align: center; }
+  .h-stat-num { font-family: 'Lora', serif; font-size: 28px; font-weight: 700; color: var(--orange); }
+  .h-stat-label { font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; }
+
+  /* ── LAYOUT ── */
+  .post-layout { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 280px; gap: 60px; padding: 48px 24px 80px; align-items: start; }
+  .post-body { max-width: 680px; }
+
+  /* ── TOC ── */
+  .toc-box { background: var(--orange-pale); border: 1px solid var(--orange-light); border-left: 4px solid var(--orange); border-radius: 10px; padding: 20px 24px; margin-bottom: 36px; }
+  .toc-box h4 { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--orange-dark); margin-bottom: 12px; }
+  .toc-list { list-style: none; counter-reset: toc; }
+  .toc-list li { counter-increment: toc; padding: 5px 0; border-bottom: 1px dashed rgba(249,115,22,.2); }
+  .toc-list li:last-child { border-bottom: none; }
+  .toc-list li::before { content: counter(toc) ". "; color: var(--orange); font-weight: 600; font-size: 13px; }
+  .toc-list a { font-size: 14px; color: var(--mid); text-decoration: none; font-weight: 500; transition: color .2s; }
+  .toc-list a:hover { color: var(--orange); }
+
+  /* ── BODY TYPOGRAPHY ── */
+  .post-body h2 { font-family: 'Lora', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 700; color: var(--dark); margin: 44px 0 16px; line-height: 1.35; padding-top: 8px; }
+  .post-body h3 { font-family: 'Lora', serif; font-size: clamp(17px, 2.5vw, 19px); font-weight: 600; color: var(--mid); margin: 32px 0 12px; line-height: 1.4; }
+  .post-body p { font-size: clamp(15px, 1.8vw, 16.5px); color: #3A3632; line-height: 1.85; margin-bottom: 20px; }
+  .post-body strong { color: var(--dark); font-weight: 600; }
+  .post-body ul, .post-body ol { padding-left: 22px; margin-bottom: 20px; }
+  .post-body li { font-size: clamp(14px, 1.8vw, 16px); color: #3A3632; line-height: 1.75; margin-bottom: 8px; }
+  .post-body li::marker { color: var(--orange); }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote { border-left: 4px solid var(--orange); background: var(--orange-pale); padding: 20px 24px; border-radius: 0 10px 10px 0; margin: 32px 0; font-family: 'Lora', serif; font-size: clamp(16px, 2.5vw, 19px); font-style: italic; color: var(--mid); line-height: 1.6; }
+
+  /* ── STAT ROW ── */
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 32px 0; }
+  .stat-box { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 18px; text-align: center; }
+  .stat-box-num { font-family: 'Lora', serif; font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--orange); }
+  .stat-box-label { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 500; }
+
+  /* ── SUBSIDY CARD ── */
+  .subsidy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0; }
+  .subsidy-card { border-radius: 12px; padding: 22px 18px; text-align: center; border: 2px solid; }
+  .subsidy-card.tier1 { background: #FFF7ED; border-color: var(--orange-light); }
+  .subsidy-card.tier2 { background: var(--green-pale); border-color: #86EFAC; }
+  .subsidy-card.tier3 { background: var(--blue-pale); border-color: #BFDBFE; }
+  .subsidy-card .s-kw { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px; }
+  .subsidy-card.tier1 .s-kw { color: var(--orange-dark); }
+  .subsidy-card.tier2 .s-kw { color: var(--green); }
+  .subsidy-card.tier3 .s-kw { color: var(--blue); }
+  .subsidy-card .s-amount { font-family: 'Lora', serif; font-size: clamp(22px, 3vw, 28px); font-weight: 700; margin-bottom: 6px; }
+  .subsidy-card.tier1 .s-amount { color: var(--orange); }
+  .subsidy-card.tier2 .s-amount { color: var(--green); }
+  .subsidy-card.tier3 .s-amount { color: var(--blue); }
+  .subsidy-card .s-label { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* ── WORKFLOW STEPS ── */
+  .workflow-step { display: flex; gap: 18px; margin-bottom: 28px; padding: 20px 20px 20px 0; border-bottom: 1px solid var(--border); }
+  .workflow-step:last-child { border-bottom: none; }
+  .step-num { width: 40px; height: 40px; border-radius: 10px; background: var(--orange); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; margin-top: 3px; }
+  .step-content h4 { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+  .step-content p { font-size: 15px; color: var(--muted); margin: 0; }
+
+  /* ── DOCUMENT CHECKLIST ── */
+  .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+  .doc-item { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 10px; }
+  .doc-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--green-pale); border: 1px solid #86EFAC; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .doc-text { font-size: 13px; color: var(--mid); line-height: 1.55; font-weight: 500; }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; margin: 24px 0; -webkit-overflow-scrolling: touch; border-radius: 10px; border: 1px solid var(--border); }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
+  .data-table th { background: var(--orange-pale); color: var(--orange-dark); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 12px 16px; text-align: left; border-bottom: 2px solid var(--orange-light); }
+  .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--mid); vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--orange-pale); }
+  .data-table td:first-child { font-weight: 600; color: var(--dark); }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+  .highlight-box h4 { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
+  .highlight-box ul { padding-left: 20px; margin: 0; }
+  .highlight-box li { font-size: 15px; color: var(--mid); margin-bottom: 8px; line-height: 1.65; }
+  .highlight-box li::marker { color: var(--orange); }
+
+  /* ── ALERT BOX ── */
+  .alert-box { border-radius: 10px; padding: 18px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+  .alert-box.warning { background: #FFFBEB; border: 1px solid #FDE68A; }
+  .alert-box.info    { background: var(--blue-pale); border: 1px solid #BFDBFE; }
+  .alert-box.success { background: var(--green-pale); border: 1px solid #86EFAC; }
+  .alert-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+  .alert-box.warning .alert-icon { background: #FEF3C7; }
+  .alert-box.info    .alert-icon { background: #DBEAFE; }
+  .alert-box.success .alert-icon { background: #DCFCE7; }
+  .alert-text { font-size: 14px; line-height: 1.7; }
+  .alert-box.warning .alert-text { color: #78350F; }
+  .alert-box.info    .alert-text { color: #1E3A5F; }
+  .alert-box.success .alert-text { color: #14532D; }
+  .alert-text strong { display: block; margin-bottom: 4px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+
+  /* ── FAQ ACCORDION ── */
+  .faq-list { margin: 24px 0; }
+  .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; overflow: hidden; background: white; }
+  .faq-q { padding: 16px 20px; font-size: 15px; font-weight: 600; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .faq-q:hover { color: var(--orange); }
+  .faq-arrow { width: 22px; height: 22px; border-radius: 50%; background: var(--orange-pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .25s; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--orange); }
+  .faq-item.open .faq-arrow svg { stroke: white; }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  .faq-item.open .faq-a { max-height: 300px; }
+  .faq-a-inner { padding: 0 20px 16px; font-size: 14px; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 14px; }
+
+  /* ── INDIA CALLOUT ── */
+  .india-callout { background: linear-gradient(135deg, #0A1628, #0F2040); border-radius: 14px; padding: 28px 32px; margin: 36px 0; color: white; border: 1px solid rgba(255,107,0,.2); }
+  .india-callout h3 { font-family: 'Lora', serif; font-size: 20px; color: white; margin: 0 0 10px; font-style: italic; }
+  .india-callout p { font-size: 15px; color: rgba(255,255,255,.65); margin-bottom: 18px; }
+  .india-flag { display: flex; gap: 6px; flex-wrap: wrap; }
+  .state-pill { background: rgba(249,115,22,.15); border: 1px solid rgba(249,115,22,.3); color: var(--orange-light); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+
+  /* ── CTA BOX ── */
+  .cta-box { background: var(--orange); border-radius: 14px; padding: 32px 28px; margin: 40px 0; text-align: center; color: white; }
+  .cta-box h3 { font-family: 'Lora', serif; font-size: clamp(18px, 3vw, 22px); margin-bottom: 10px; color: white; }
+  .cta-box p { font-size: 15px; opacity: .85; margin-bottom: 20px; }
+  .cta-box a { display: inline-block; background: white; color: var(--orange); font-weight: 700; font-size: 15px; padding: 12px 32px; border-radius: 8px; text-decoration: none; transition: opacity .2s; }
+  .cta-box a:hover { opacity: .9; }
+
+  /* ── AUTHOR BIO ── */
+  .author-bio { border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; gap: 18px; margin-top: 48px; background: white; flex-wrap: wrap; }
+  .bio-av { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--orange-light), var(--orange)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; color: white; flex-shrink: 0; }
+  .bio-text h4 { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+  .bio-text p { font-size: 14px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+  /* ── TAGS ── */
+  .post-tags { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .post-tags h5 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .tags-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+  .keyword-tag { background: var(--bg); border: 1px solid var(--border); color: var(--mid); font-size: 13px; padding: 5px 13px; border-radius: 6px; font-weight: 500; cursor: pointer; transition: all .2s; }
+  .keyword-tag:hover { background: var(--orange-pale); border-color: var(--orange-light); color: var(--orange-dark); }
+
+  /* ── RELATED ── */
+  .related-section { margin-top: 56px; padding-top: 40px; border-top: 2px solid var(--border); }
+  .related-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 10px; }
+  .related-header h2 { font-family: 'Lora', serif; font-size: clamp(20px, 3vw, 24px); color: var(--dark); font-weight: 700; }
+  .related-header a { font-size: 13px; font-weight: 600; color: var(--orange); text-decoration: none; display: flex; align-items: center; gap: 4px; transition: gap .2s; }
+  .related-header a:hover { gap: 8px; }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .rel-card { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; cursor: pointer; transition: border-color .2s, box-shadow .2s, transform .2s; display: flex; flex-direction: column; }
+  .rel-card:hover { border-color: var(--orange-light); box-shadow: 0 8px 28px rgba(249,115,22,.1); transform: translateY(-2px); }
+  .rel-thumb { height: 140px; display: flex; align-items: center; justify-content: center; }
+  .rel-thumb-icon { width: 56px; height: 56px; border-radius: 14px; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+  .rt1 { background: linear-gradient(135deg, #FFF7ED, #FED7AA44); }
+  .rt2 { background: linear-gradient(135deg, #F0FDF4, #BBF7D044); }
+  .rt3 { background: linear-gradient(135deg, #EFF6FF, #BFDBFE44); }
+  .rt4 { background: linear-gradient(135deg, #FDF4FF, #E9D5FF44); }
+  .rel-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+  .rel-cat { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+  .rel-body h4 { font-family: 'Lora', serif; font-size: 17px; color: var(--dark); line-height: 1.4; margin-bottom: 10px; font-weight: 600; }
+  .rel-body p { font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
+  .rel-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .rel-meta { font-size: 12px; color: var(--light); display: flex; align-items: center; gap: 5px; }
+  .rel-arrow { width: 28px; height: 28px; border-radius: 50%; background: var(--orange-pale); display: flex; align-items: center; justify-content: center; transition: background .2s; }
+  .rel-card:hover .rel-arrow { background: var(--orange); }
+  .rel-card:hover .rel-arrow svg { stroke: white; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { position: sticky; top: 24px; }
+  .sb-box { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 22px; margin-bottom: 22px; }
+  .sb-title { font-family: 'Lora', serif; font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .reading-prog { margin-bottom: 22px; }
+  .prog-bar-wrap { background: var(--border); border-radius: 4px; height: 4px; overflow: hidden; }
+  .prog-bar { height: 100%; background: var(--orange); border-radius: 4px; width: 0%; transition: width .3s; }
+  .prog-label { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .sb-nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .sb-nav-item { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; transition: border-color .2s, background .2s; font-size: 12px; font-weight: 500; color: var(--mid); line-height: 1.4; text-decoration: none; display: block; }
+  .sb-nav-item:hover { border-color: var(--orange-light); background: var(--orange-pale); color: var(--orange-dark); }
+  .sb-nav-num { font-size: 10px; font-weight: 700; color: var(--orange); margin-bottom: 3px; display: block; }
+  .share-list { display: flex; flex-direction: column; gap: 8px; }
+  .share-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; cursor: pointer; transition: background .2s; border: 1px solid var(--border); font-size: 13px; font-weight: 500; color: var(--mid); }
+  .share-item:hover { background: var(--bg); border-color: var(--orange-light); color: var(--dark); }
+  .share-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sb-cta { background: linear-gradient(135deg, #0A1628, #0F2040); border-radius: 12px; padding: 22px; color: white; text-align: center; border: 1px solid rgba(255,107,0,.2); }
+  .sb-cta h4 { font-family: 'Lora', serif; font-size: 17px; color: white; margin-bottom: 8px; }
+  .sb-cta p { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 16px; line-height: 1.6; }
+  .sb-cta a { display: block; background: var(--orange); color: white; text-align: center; padding: 10px; border-radius: 7px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background .2s; }
+  .sb-cta a:hover { background: var(--orange-dark); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--dark); color: rgba(255,255,255,.5); text-align: center; padding: 32px 24px; font-size: 13px; }
+  footer strong { color: var(--orange); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .post-hero, .hero-visual, .post-layout { animation: fadeUp .6s ease both; }
+  .post-layout { animation-delay: .15s; }
+
+  /* ════════════════════════════
+     TABLET  ≤ 900px
+  ════════════════════════════ */
+  @media (max-width: 900px) {
+    .post-layout { grid-template-columns: 1fr; gap: 0; padding: 32px 16px 60px; }
+    .post-body { max-width: 100%; }
+    .sidebar { position: static; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .reading-prog { grid-column: 1 / -1; }
+    .sb-cta { grid-column: 1 / -1; }
+    .hero-img-wrap { height: 280px; }
+    .h-stat-num { font-size: 22px; }
+    .subsidy-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ════════════════════════════
+     MOBILE  ≤ 600px
+  ════════════════════════════ */
+  @media (max-width: 600px) {
+    .breadcrumb { padding: 16px 16px 0; }
+    .post-hero { padding: 20px 16px 0; }
+    .hero-visual { padding: 0 16px; }
+    .hero-img-wrap { height: 210px; border-radius: 12px; }
+    .hero-center-icon { width: 56px; height: 56px; border-radius: 14px; }
+    .hero-center-icon svg { width: 28px; height: 28px; }
+    .hero-center > div:nth-child(2) { font-size: 15px !important; }
+    .hero-center > div:nth-child(3) { font-size: 11px !important; }
+    .hero-stat-row { gap: 14px; margin-top: 12px; }
+    .h-stat-num { font-size: 18px; }
+    .h-stat-label { font-size: 9px; }
+    .post-layout { padding: 20px 16px 48px; }
+    .stat-row { grid-template-columns: 1fr; gap: 10px; }
+    .subsidy-grid { grid-template-columns: 1fr; }
+    .doc-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+    .sidebar { grid-template-columns: 1fr; }
+    .sb-cta { grid-column: auto; }
+    .toc-box, .india-callout, .highlight-box, .cta-box { padding: 16px 18px; }
+    .cta-box a { display: block; text-align: center; }
+    .workflow-step { gap: 12px; padding-right: 0; }
+    .step-num { width: 34px; height: 34px; font-size: 13px; }
+    .author-bio { padding: 18px; gap: 12px; flex-wrap: wrap; }
+    .bio-av { width: 52px; height: 52px; font-size: 16px; }
+    .post-byline { gap: 10px; }
+    .byline-actions { margin-left: auto; }
+    footer { font-size: 12px; padding: 24px 16px; }
+  }
+
+  @media (max-width: 380px) {
+    .sb-nav-grid { grid-template-columns: 1fr; }
+    .pull-quote { padding: 14px 16px; }
+    .hero-stat-row { gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Home</a> <span>/</span>
+  <a href="#">Blog</a> <span>/</span>
+  <span style="color:var(--muted)">Government Policy</span>
+</div>
+
+<!-- HERO -->
+<div class="post-hero">
+  <div class="hero-tags">
+    <span class="tag tag-green">Government Policy</span>
+    <span class="tag tag-primary">Installer Guide</span>
+    <span class="tag tag-blue">India Solar 2026</span>
+  </div>
+  <h1 class="post-title">PM Surya Ghar Yojana: <em>What Solar Installers Need to Know</em></h1>
+  <p class="post-subtitle">The government's flagship rooftop solar scheme has created the biggest residential solar demand wave India has ever seen. Here is your complete operational guide — subsidy amounts, eligibility rules, documentation, registration steps, and how to use the scheme to close deals faster.</p>
+  <div class="post-byline">
+    <div class="author-av">RK</div>
+    <div class="byline-info">
+      <div class="author-name">Rahul Kumar — Head of Growth, Solar CRM</div>
+      <div class="byline-meta">April 30, 2026 &nbsp;·&nbsp; 12 min read &nbsp;·&nbsp; Updated for India Solar Market 2026</div>
+    </div>
+    <div class="byline-actions">
+      <div class="share-btn" title="Share on LinkedIn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </div>
+      <div class="share-btn" title="Share on Twitter">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+      </div>
+      <div class="share-btn" title="Copy link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO VISUAL -->
+<div class="hero-visual">
+  <div class="hero-img-wrap">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-center">
+      <div class="hero-center-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.5">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <div style="color:rgba(255,255,255,.9); font-family:'Lora',serif; font-size:20px; font-style:italic; margin-bottom:8px;">"Har Ghar Bijli, Muft Bijli"</div>
+      <div style="color:rgba(255,255,255,.4); font-size:13px;">PM Surya Ghar Installer Guide · India 2026 Edition</div>
+      <div class="hero-stat-row">
+        <div class="h-stat"><div class="h-stat-num">1 Cr+</div><div class="h-stat-label">Homes Targeted</div></div>
+        <div class="h-stat"><div class="h-stat-num">&#x20B9;78,000</div><div class="h-stat-label">Max Subsidy / Home</div></div>
+        <div class="h-stat"><div class="h-stat-num">75,021 MW</div><div class="h-stat-label">National Target</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="post-layout">
+  <article class="post-body">
+
+    <div class="toc-box">
+      <h4>📋 In This Article</h4>
+      <ol class="toc-list">
+        <li><a href="#what-is">What Is PM Surya Ghar Muft Bijli Yojana?</a></li>
+        <li><a href="#subsidy-amounts">Subsidy Amounts: Exactly How Much Can Your Customer Get?</a></li>
+        <li><a href="#eligibility">Customer Eligibility Criteria</a></li>
+        <li><a href="#empanelment">Vendor Empanelment: How to Register as an Approved Installer</a></li>
+        <li><a href="#documents">Documents Required from the Customer</a></li>
+        <li><a href="#process">The End-to-End Installation & Subsidy Process</a></li>
+        <li><a href="#discom">Navigating DISCOM Approvals State by State</a></li>
+        <li><a href="#sales-pitch">Using PM Surya Ghar as a Sales Tool — The Right Way</a></li>
+        <li><a href="#common-mistakes">Common Mistakes Installers Make With the Scheme</a></li>
+        <li><a href="#crm">Managing Subsidy Applications Through Your CRM</a></li>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+      </ol>
+    </div>
+
+    <p>On 13 February 2024, the Government of India launched the <strong>PM Surya Ghar Muft Bijli Yojana</strong> — an ambitious scheme to install rooftop solar systems in 1 crore Indian households, with subsidies that directly reduce the upfront cost for customers and unlock demand that was previously blocked by price sensitivity.</p>
+
+    <p>For solar installation companies across India, this scheme is the single most important business opportunity in the industry's history. The subsidy of up to ₹78,000 per household means that a 3 kWp system — which would otherwise cost ₹1.5–₹1.8 lakh — becomes attainable for middle-income families. The government has budgeted ₹75,021 crore for this programme. The pipeline of potential customers is enormous. And the installers who understand the scheme deeply — who can explain it clearly, process applications efficiently, and manage the documentation without errors — will capture a disproportionate share of this market.</p>
+
+    <p>This guide covers everything you need as a solar installer: subsidy amounts, eligibility, empanelment, documentation, the end-to-end process, DISCOM navigation, and how to use the scheme to close more deals without making promises you cannot keep.</p>
+
+    <div class="pull-quote">
+      "PM Surya Ghar has not just created demand — it has created an entirely new category of customer who was never considering solar before. Your job is to be the installer who serves them best."
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-box-num">1 Cr</div><div class="stat-box-label">households targeted by 2027</div></div>
+      <div class="stat-box"><div class="stat-box-num">&#x20B9;75,021 Cr</div><div class="stat-box-label">total government budget for the scheme</div></div>
+      <div class="stat-box"><div class="stat-box-num">300 units</div><div class="stat-box-label">free electricity per month for eligible households</div></div>
+    </div>
+
+    <h2 id="what-is">What Is PM Surya Ghar Muft Bijli Yojana?</h2>
+
+    <p>PM Surya Ghar Muft Bijli Yojana is a central government scheme under the Ministry of New and Renewable Energy (MNRE) that provides <strong>direct financial subsidies for rooftop solar installation</strong> to residential consumers across India. The scheme is designed to reduce electricity bills for households — and ultimately provide up to 300 units of free electricity per month to eligible families — by making solar installation affordable through upfront capital subsidies.</p>
+
+    <p>The scheme operates through a centralised national portal (pmsuryaghar.gov.in) and works in coordination with Distribution Companies (DISCOMs) in each state. The subsidy amount is determined by the system capacity installed and is disbursed directly to the customer's bank account after successful installation and inspection — it is not paid to the installer. This is an important distinction that every installer needs to communicate clearly to customers during the sales process.</p>
+
+    <div class="alert-box info">
+      <div class="alert-icon">ℹ️</div>
+      <div class="alert-text">
+        <strong>Key Point for Installers</strong>
+        The PM Surya Ghar subsidy is disbursed directly to the customer's Aadhaar-linked bank account — not to your company. You cannot deduct the subsidy upfront from your invoice. The customer pays your full price and receives the subsidy separately. Make this absolutely clear before signing any agreement.
+      </div>
+    </div>
+
+    <h2 id="subsidy-amounts">Subsidy Amounts: Exactly How Much Can Your Customer Get?</h2>
+
+    <p>The subsidy structure under PM Surya Ghar is tiered by system capacity. Residential customers can claim subsidy on systems up to 3 kWp under the central scheme. Any capacity above 3 kWp (up to 10 kWp for individual households) may receive additional state-level subsidies depending on the state DISCOM's own scheme, but the central government subsidy is capped as follows:</p>
+
+    <div class="subsidy-grid">
+      <div class="subsidy-card tier1">
+        <div class="s-kw">Up to 2 kWp</div>
+        <div class="s-amount">&#x20B9;30,000</div>
+        <div class="s-label">₹15,000 per kWp<br>Central subsidy</div>
+      </div>
+      <div class="subsidy-card tier2">
+        <div class="s-kw">2 kWp – 3 kWp</div>
+        <div class="s-amount">&#x20B9;48,000</div>
+        <div class="s-label">₹15,000 for first 2 kWp<br>+ ₹18,000 for next 1 kWp</div>
+      </div>
+      <div class="subsidy-card tier3">
+        <div class="s-kw">Above 3 kWp</div>
+        <div class="s-amount">&#x20B9;78,000</div>
+        <div class="s-label">Maximum central subsidy<br>capped at 3 kWp equivalent</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-text">
+        <strong>Important Note on System Sizing</strong>
+        The maximum central government subsidy is ₹78,000 regardless of how large the system is. For systems above 3 kWp, the subsidy does not increase further under the central scheme. Always check your state DISCOM's current portal for any additional state-level subsidies that may apply — several states including Maharashtra, Gujarat, and Rajasthan have supplementary schemes that can significantly increase the total benefit.
+      </div>
+    </div>
+
+    <p>To put this in practical context for your sales conversations: a 3 kWp system that costs ₹1,65,000 installed carries a subsidy of ₹78,000 — reducing the effective out-of-pocket cost to the customer to just ₹87,000. For a household with a monthly electricity bill of ₹2,500–₹3,500, this produces a payback period of approximately 3–4 years. That is a very compelling financial case, and your sales team should be able to present it clearly and confidently to every residential lead.</p>
+
+    <h2 id="eligibility">Customer Eligibility Criteria</h2>
+
+    <p>Not every homeowner qualifies for the PM Surya Ghar subsidy. Understanding the eligibility criteria before the site visit saves both your team and the customer significant time and prevents expectations being set that cannot be met.</p>
+
+    <div class="highlight-box">
+      <h4>Who Qualifies for PM Surya Ghar Subsidy</h4>
+      <ul>
+        <li><strong>Residential consumers only:</strong> The scheme is exclusively for households. Commercial, industrial, or agricultural consumers are not eligible for this central scheme subsidy.</li>
+        <li><strong>Owner-occupied premises:</strong> The applicant must be the owner of the property where the system is to be installed, with the electricity connection in their name.</li>
+        <li><strong>Valid electricity connection:</strong> The customer must have an existing, active DISCOM electricity connection at the installation address.</li>
+        <li><strong>No prior central subsidy:</strong> Households that have previously received a central government subsidy for rooftop solar are not eligible to apply again.</li>
+        <li><strong>Aadhaar-linked bank account:</strong> The subsidy is disbursed via DBT (Direct Benefit Transfer) — the customer must have a bank account linked to their Aadhaar number.</li>
+        <li><strong>DISCOM registration:</strong> The customer must register on the national portal (pmsuryaghar.gov.in) and receive DISCOM approval before installation begins — post-installation applications are not accepted.</li>
+        <li><strong>Empanelled installer only:</strong> The installation must be carried out by an installer empanelled on the national portal. DIY or un-empanelled installations do not qualify.</li>
+      </ul>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-text">
+        <strong>Flat / Apartment Customers</strong>
+        Residents in housing societies and apartment complexes face additional complexity. The installation may require housing society approval, and the electricity connection must be in the individual flat owner's name — not a common meter. Always verify this during lead qualification to avoid wasted site visits.
+      </div>
+    </div>
+
+    <h2 id="empanelment">Vendor Empanelment: How to Register as an Approved Installer</h2>
+
+    <p>To be eligible to install systems under PM Surya Ghar and enable your customers to claim the subsidy, your company must be registered as an empanelled vendor on the national portal. Non-empanelled installations — even if technically excellent — do not qualify for the central subsidy, and customers who use non-empanelled installers will lose their subsidy entitlement entirely.</p>
+
+    <div class="workflow-step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Register on pmsuryaghar.gov.in</h4>
+        <p>Visit the national portal and click "Register as Vendor." You will need your company's GST number, PAN, Udyam/MSME registration (if applicable), bank account details for payments, and a list of the states/districts where you intend to operate. The registration is free of charge.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Submit Technical Credentials</h4>
+        <p>Upload documents demonstrating your technical capability: electrical contractor licence, details of qualified electrical engineers on staff, and a portfolio of previous installations (if available). The MNRE portal verifies these credentials before approving empanelment — the process typically takes 7–15 working days.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Register with Your State DISCOM(s)</h4>
+        <p>In addition to the national portal, most states also require installers to register separately with the state DISCOM. This is because the DISCOM is responsible for technical inspection, net meter installation, and final approval. Contact your state DISCOM's renewable energy department directly — registration requirements and timelines vary significantly by state.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Keep Your Empanelment Current</h4>
+        <p>Empanelment is not permanent — it requires periodic renewal and compliance with updated MNRE technical standards. Set a reminder to review your empanelment status every 6 months. A lapse in empanelment means your customers cannot claim subsidies, which is both a legal and reputational risk for your business.</p>
+      </div>
+    </div>
+
+    <h2 id="documents">Documents Required from the Customer</h2>
+
+    <p>The most common reason for subsidy application delays is incomplete or incorrect documentation. Your team should collect all required documents during or immediately after the site visit — before installation begins. A solar CRM with a digital document checklist makes this effortless: the field rep photographs and uploads documents on-site, the back office can review them the same day, and applications can be submitted before the week is out.</p>
+
+    <div class="doc-grid">
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="doc-text">Latest electricity bill (last 3 months) showing consumer number and connection address</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="doc-text">Aadhaar card of the electricity consumer (the subsidy account holder)</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="doc-text">PAN card of the applicant</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="doc-text">Bank account passbook / cancelled cheque (Aadhaar-linked account)</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="doc-text">Property ownership proof (sale deed, property tax receipt, or registry document)</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="doc-text">Passport-size photograph of the applicant</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="doc-text">Signed installation agreement between customer and your company</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="doc-text">Roof ownership consent letter (if the property is jointly owned or in a housing society)</div>
+      </div>
+    </div>
+
+    <h2 id="process">The End-to-End Installation &amp; Subsidy Process</h2>
+
+    <p>Understanding the full process — from the customer's initial registration to the final subsidy disbursement — is essential for setting accurate timelines with customers and managing your own project pipeline effectively. The process has 7 key stages:</p>
+
+    <div class="workflow-step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Customer Registers on National Portal</h4>
+        <p>The customer registers on pmsuryaghar.gov.in with their electricity consumer number and Aadhaar. This can be done by the customer themselves or assisted by your team — many of the best solar companies provide this as a value-added service during the site visit, removing friction and accelerating the process. Registration takes 10–15 minutes.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>DISCOM Feasibility Approval</h4>
+        <p>After registration, the customer's local DISCOM reviews the application and grants feasibility approval — confirming that the grid can accommodate the proposed solar system. This typically takes 7–30 days depending on the state and DISCOM's workload. This step must be completed <strong>before installation begins</strong>. Starting work before DISCOM approval will disqualify the subsidy.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Installation by Empanelled Vendor</h4>
+        <p>Once DISCOM approval is received, your team proceeds with installation. Use components that comply with MNRE specifications — BIS-certified panels and MNRE-approved inverters. Non-compliant equipment is a common reason for technical rejection during inspection. Document the entire installation with timestamped photos in your CRM for easy submission.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Technical Inspection by DISCOM</h4>
+        <p>After installation, the customer notifies the DISCOM through the portal. A DISCOM technical officer visits to inspect the installation and verify compliance. This inspection can take anywhere from 3 days to 6 weeks depending on the state — Maharashtra and Gujarat are typically faster; some UP and MP districts have longer wait times. Be transparent with customers about realistic timelines.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Net Meter Installation</h4>
+        <p>After passing inspection, the DISCOM installs a bidirectional net meter to measure both energy consumed from the grid and energy exported to it. This is the DISCOM's responsibility and cost — your team does not install the net meter. However, your installation must include the correct metering point preparation as per DISCOM specifications. Net meter installation timelines are the most variable part of the process: 2 weeks to 3 months in different states.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h4>Commissioning Certificate &amp; Portal Update</h4>
+        <p>Once the net meter is installed and the system is live, the DISCOM issues a commissioning certificate. This is uploaded to the portal by either the DISCOM or the installer (depending on state). The system is now officially commissioned and the subsidy claim is triggered.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <h4>Subsidy Disbursement to Customer's Bank Account</h4>
+        <p>Within 30 days of successful commissioning confirmation, the central government subsidy is transferred directly to the customer's Aadhaar-linked bank account via DBT. The customer does not need to take any further action — the transfer is automatic once the system is commissioned. Advise customers to keep their bank account active and ensure their Aadhaar-bank linkage is verified before the process begins.</p>
+      </div>
+    </div>
+
+    <h2 id="discom">Navigating DISCOM Approvals State by State</h2>
+
+    <p>The single biggest source of delay and customer frustration in the PM Surya Ghar process is DISCOM approval timelines — and these vary enormously by state. Experienced installers build realistic, state-specific timelines into their customer conversations from day one rather than giving generic estimates that create disappointment later.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>DISCOM / Body</th>
+            <th>Typical Feasibility Approval</th>
+            <th>Net Meter Wait</th>
+            <th>Overall Process</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gujarat</td>
+            <td>UGVCL / PGVCL / DGVCL / MGVCL</td>
+            <td>7–14 days</td>
+            <td>2–4 weeks</td>
+            <td>6–10 weeks total</td>
+          </tr>
+          <tr>
+            <td>Maharashtra</td>
+            <td>MSEDCL / BEST / TATA Power</td>
+            <td>10–21 days</td>
+            <td>3–6 weeks</td>
+            <td>8–14 weeks total</td>
+          </tr>
+          <tr>
+            <td>Rajasthan</td>
+            <td>JVVNL / AVVNL / JdVVNL</td>
+            <td>14–30 days</td>
+            <td>4–8 weeks</td>
+            <td>10–16 weeks total</td>
+          </tr>
+          <tr>
+            <td>Tamil Nadu</td>
+            <td>TANGEDCO</td>
+            <td>21–45 days</td>
+            <td>4–8 weeks</td>
+            <td>12–18 weeks total</td>
+          </tr>
+          <tr>
+            <td>Karnataka</td>
+            <td>BESCOM / HESCOM / MESCOM</td>
+            <td>14–30 days</td>
+            <td>3–6 weeks</td>
+            <td>10–14 weeks total</td>
+          </tr>
+          <tr>
+            <td>Uttar Pradesh</td>
+            <td>UPPCL / PVVNL / DVVNL</td>
+            <td>21–45 days</td>
+            <td>6–12 weeks</td>
+            <td>14–20 weeks total</td>
+          </tr>
+          <tr>
+            <td>Delhi NCR</td>
+            <td>BSES / TATA Power Delhi</td>
+            <td>10–21 days</td>
+            <td>3–5 weeks</td>
+            <td>8–12 weeks total</td>
+          </tr>
+          <tr>
+            <td>Punjab</td>
+            <td>PSPCL</td>
+            <td>14–21 days</td>
+            <td>3–6 weeks</td>
+            <td>8–12 weeks total</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The timelines above are approximate and subject to change with DISCOM portal upgrades, staffing changes, and seasonal application volumes. Always check the current DISCOM processing times in your specific district before committing to timelines with customers. During high-volume periods — like the post-monsoon season when many customers start their solar journey — waits can be 30–50% longer than the typical range above.</p>
+
+    <h2 id="sales-pitch">Using PM Surya Ghar as a Sales Tool — The Right Way</h2>
+
+    <p>The subsidy is a powerful sales accelerator — but only if used correctly. Solar companies that handle the scheme conversation poorly create more problems than they solve: customers who believe the subsidy reduces the upfront price, customers who expect unrealistically short timelines, and customers who feel misled when the process takes longer than expected.</p>
+
+    <p>The right way to use PM Surya Ghar in your sales conversation has three components. First, lead with the financial benefit clearly and accurately: "The government will transfer ₹78,000 directly to your bank account after the system is commissioned — this is not a discount on our price, but it significantly reduces your net cost." This framing sets accurate expectations from the start.</p>
+
+    <p>Second, position your company's process expertise as a differentiator: "We handle the entire portal registration, document submission, and DISCOM follow-up on your behalf — you do not need to do anything except provide your documents." Many customers are intimidated by government paperwork, and removing that friction is a real competitive advantage.</p>
+
+    <p>Third, be honest about timelines: "The subsidy arrives in your account approximately 8–16 weeks after we complete the installation, depending on your DISCOM's current processing speed. We will keep you updated at every stage." Customers who receive accurate timelines and regular updates stay satisfied. Customers who were told "it will come in 4 weeks" and are still waiting at 10 weeks become your biggest source of negative word-of-mouth.</p>
+
+    <div class="india-callout">
+      <h3>Why Top Installers Win with PM Surya Ghar &#x1F1EE;&#x1F1F3;</h3>
+      <p>The solar companies converting the most leads under PM Surya Ghar are not just selling panels — they are selling a complete subsidy management service. They handle registration, document verification, DISCOM follow-up, inspection scheduling, and keep customers updated at every stage through automated WhatsApp messages in the local language. Solar CRM makes this entire process trackable, documented, and automated for teams across every major state:</p>
+      <div class="india-flag">
+        <span class="state-pill">Maharashtra</span>
+        <span class="state-pill">Gujarat</span>
+        <span class="state-pill">Rajasthan</span>
+        <span class="state-pill">Tamil Nadu</span>
+        <span class="state-pill">Karnataka</span>
+        <span class="state-pill">Uttar Pradesh</span>
+        <span class="state-pill">Madhya Pradesh</span>
+        <span class="state-pill">Telangana</span>
+        <span class="state-pill">Punjab</span>
+        <span class="state-pill">Delhi NCR</span>
+      </div>
+    </div>
+
+    <h2 id="common-mistakes">Common Mistakes Installers Make With the Scheme</h2>
+
+    <p>After working with hundreds of solar installers across India on PM Surya Ghar applications, these are the mistakes that consistently cause subsidy rejections, delays, and customer complaints:</p>
+
+    <ul>
+      <li><strong>Starting installation before DISCOM feasibility approval:</strong> The most common and most expensive mistake. The subsidy is categorically denied if work begins before the DISCOM grants approval. No exceptions.</li>
+      <li><strong>Using non-MNRE-approved equipment:</strong> Panels or inverters that are not on the MNRE approved list will fail technical inspection. Always verify your equipment list against the current MNRE portal before purchasing for PM Surya Ghar jobs.</li>
+      <li><strong>Misrepresenting the subsidy as an upfront discount:</strong> Telling customers "you only need to pay ₹87,000" — implying the subsidy is deducted at purchase — is legally and ethically incorrect. The full price must be paid, and the subsidy comes later. Companies that misrepresent this face customer complaints and, in serious cases, DISCOM blacklisting.</li>
+      <li><strong>Submitting incomplete documentation:</strong> Missing documents are the single biggest cause of application delays. A digital checklist enforced at the site visit stage eliminates this problem entirely.</li>
+      <li><strong>Failing to update the portal after installation:</strong> The installer is responsible for updating the national portal after installation is complete. Forgetting this step delays the DISCOM inspection trigger and pushes back the entire timeline.</li>
+      <li><strong>Operating in districts not covered by your empanelment:</strong> Your empanelment covers specific geographic areas. Installing outside your registered coverage area invalidates the subsidy claim. Always verify coverage before accepting a job in a new district.</li>
+    </ul>
+
+    <h2 id="crm">Managing Subsidy Applications Through Your CRM</h2>
+
+    <p>The PM Surya Ghar process involves multiple stages, multiple documents, multiple approvals from multiple agencies, and a customer who needs regular status updates over a period of 2–5 months. Managing this manually — through WhatsApp reminders, spreadsheets, and personal memory — is a recipe for missed steps, frustrated customers, and lost subsidies.</p>
+
+    <p>A solar CRM purpose-built for Indian solar companies turns the subsidy process into a structured, visible, automated workflow. Each PM Surya Ghar job has its own subsidy stage tracker — from portal registration through to final disbursement confirmation. Automated WhatsApp messages keep the customer informed at every milestone: "Great news, Mr Sharma — your DISCOM has granted feasibility approval. We are ready to schedule your installation." Or: "Your net meter has been installed successfully. Your subsidy of ₹78,000 will be credited to your bank account within 30 days."</p>
+
+    <p>The manager dashboard shows all active PM Surya Ghar applications grouped by stage — how many are waiting for DISCOM approval, how many are in the inspection queue, how many have had net meters installed. This visibility allows the team to proactively follow up with DISCOMs on stalled applications, identify bottlenecks by state or district, and give customers accurate status updates at any time without anyone having to make a manual status call to the government portal.</p>
+
+    <h2 id="faq">Frequently Asked Questions from Customers</h2>
+
+    <p>These are the questions your sales and operations teams will hear most often from customers about PM Surya Ghar. Having confident, accurate answers to all of them is a direct competitive advantage.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Will I get the subsidy before or after installation?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">The subsidy is disbursed after installation. The process is: (1) register on the portal, (2) get DISCOM feasibility approval, (3) installation, (4) DISCOM technical inspection, (5) net meter installation, (6) system commissioning, and finally (7) subsidy credited to your bank account. You pay the full installation cost to us, and then receive the subsidy in your bank account — typically within 30 days of commissioning.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can a tenant apply for the subsidy?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">No. The subsidy is available only to the property owner whose name appears on the electricity bill. A tenant cannot apply, even with the landlord's permission. The electricity connection and the property ownership must both be in the applicant's name.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What if I already have solar installed on my roof?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">If you previously received a central government subsidy for your existing system, you are not eligible for the PM Surya Ghar subsidy again. However, if you installed solar without any government subsidy, you may be eligible — check the portal to verify your previous application status against your consumer number.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How long does the entire process take?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">The timeline varies by state and DISCOM. In faster states like Gujarat and Delhi, the complete process from registration to subsidy disbursement typically takes 8–12 weeks. In states with higher workloads like UP or Tamil Nadu, 14–20 weeks is more realistic. We will give you a state-specific timeline estimate during your consultation and keep you updated throughout the process.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Is the 300 units free electricity really free?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">The "free electricity" refers to the energy your solar system generates and offsets from your grid consumption through net metering. If your 3 kWp system generates 300–360 units per month and your consumption is 300 units, your effective net bill from the DISCOM is zero or minimal. It is not a direct cash transfer — it works through the savings on your electricity bill via net metering. The exact savings depend on your consumption pattern and your DISCOM's net metering tariff.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can I get a loan to cover the upfront cost before the subsidy arrives?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes — this is strongly encouraged by the scheme. Several nationalised banks and small finance banks offer dedicated PM Surya Ghar solar loans at subsidised interest rates. We can connect you with our banking partners for a quick approval. Many customers choose to take a short-term loan, repay it when the subsidy arrives, and then enjoy pure electricity savings from the system.</div></div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>Manage Every PM Surya Ghar Application Without the Chaos</h3>
+      <p>Solar CRM tracks every subsidy application stage, automates customer updates in Hindi and regional languages, and gives your manager real-time visibility across all active DISCOM approvals. Join 500+ solar companies across India. Starting ₹9,999 — lifetime, no monthly fees.</p>
+      <a href="#">Book a Free Demo Today →</a>
+    </div>
+
+    <!-- AUTHOR BIO -->
+    <div class="author-bio">
+      <div class="bio-av">RK</div>
+      <div class="bio-text">
+        <h4>Rahul Kumar — Head of Growth, Solar CRM</h4>
+        <p>Rahul has spent 8 years working with solar installation businesses across India, helping them scale from 5 installations a month to 50+. He writes about solar CRM, government schemes, operations, and sales best practices for the Indian solar industry.</p>
+      </div>
+    </div>
+
+    <!-- TAGS -->
+    <div class="post-tags">
+      <h5>Keywords &amp; Topics</h5>
+      <div class="tags-cloud">
+        <span class="keyword-tag">PM Surya Ghar Yojana</span>
+        <span class="keyword-tag">Solar Subsidy India 2026</span>
+        <span class="keyword-tag">Rooftop Solar Subsidy</span>
+        <span class="keyword-tag">MNRE Solar Scheme</span>
+        <span class="keyword-tag">Solar Installer Registration</span>
+        <span class="keyword-tag">DISCOM Net Metering India</span>
+        <span class="keyword-tag">Solar CRM India</span>
+        <span class="keyword-tag">Solar Vendor Empanelment</span>
+        <span class="keyword-tag">Residential Solar India</span>
+        <span class="keyword-tag">Solar DBT Subsidy</span>
+        <span class="keyword-tag">Free Electricity Solar India</span>
+        <span class="keyword-tag">Solar Business India 2026</span>
+      </div>
+    </div>
+
+    <!-- RELATED -->
+    <div class="related-section">
+      <div class="related-header">
+        <h2>You May Also Like</h2>
+        <a href="#">View all articles →</a>
+      </div>
+      <div class="related-grid">
+        <div class="rel-card">
+          <div class="rel-thumb rt1">
+            <div class="rel-thumb-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2z"/><path d="M15 19V9a2 2 0 00-2-2h-2a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2z"/><path d="M21 19V5a2 2 0 00-2-2h-2a2 2 0 00-2 2v14a2 2 0 002 2h2a2 2 0 002-2z"/></svg>
+            </div>
+          </div>
+          <div class="rel-body">
+            <div class="rel-cat">CRM Strategy</div>
+            <h4>How Solar Companies Can 3× Their Lead Conversion With Smart CRM Workflows</h4>
+            <p>The exact CRM workflow playbook the fastest-growing solar installers in India use to close more deals without extra staff.</p>
+            <div class="rel-footer">
+              <div class="rel-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>8 min read · Apr 14</div>
+              <div class="rel-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-thumb rt2">
+            <div class="rel-thumb-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+          </div>
+          <div class="rel-body">
+            <div class="rel-cat" style="color:#16A34A">Team &amp; Operations</div>
+            <h4>Building a High-Performance Solar Sales Team in India 2026</h4>
+            <p>Hiring, training, and commission structures that top solar companies across Maharashtra and Gujarat swear by.</p>
+            <div class="rel-footer">
+              <div class="rel-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>11 min read · Apr 27</div>
+              <div class="rel-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-thumb rt3">
+            <div class="rel-thumb-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+          </div>
+          <div class="rel-body">
+            <div class="rel-cat" style="color:#2563EB">Finance</div>
+            <h4>Solar Invoicing &amp; Payment Collection: Stop Chasing Clients</h4>
+            <p>How to automate GST invoicing, send smart reminders, and cut your receivables by 50% without a single awkward follow-up call.</p>
+            <div class="rel-footer">
+              <div class="rel-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10 min read · Apr 29</div>
+              <div class="rel-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-thumb rt4">
+            <div class="rel-thumb-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9333EA" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+          </div>
+          <div class="rel-body">
+            <div class="rel-cat" style="color:#9333EA">Technology</div>
+            <h4>Why Your Solar Business Needs a Mobile-Ready CRM in 2026</h4>
+            <p>Field engineers across India can't afford desk-bound tools. Here's how mobile CRM transforms on-site productivity.</p>
+            <div class="rel-footer">
+              <div class="rel-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>9 min read · Apr 29</div>
+              <div class="rel-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="reading-prog">
+      <div class="prog-bar-wrap"><div class="prog-bar" id="prog"></div></div>
+      <div class="prog-label" id="prog-label">0% read</div>
+    </div>
+    <div class="sb-box">
+      <div class="sb-title">On This Page</div>
+      <div class="sb-nav-grid">
+        <a href="#what-is"          class="sb-nav-item"><span class="sb-nav-num">01</span>What Is the Scheme?</a>
+        <a href="#subsidy-amounts"  class="sb-nav-item"><span class="sb-nav-num">02</span>Subsidy Amounts</a>
+        <a href="#eligibility"      class="sb-nav-item"><span class="sb-nav-num">03</span>Eligibility</a>
+        <a href="#empanelment"      class="sb-nav-item"><span class="sb-nav-num">04</span>Empanelment</a>
+        <a href="#documents"        class="sb-nav-item"><span class="sb-nav-num">05</span>Documents</a>
+        <a href="#process"          class="sb-nav-item"><span class="sb-nav-num">06</span>Full Process</a>
+        <a href="#discom"           class="sb-nav-item"><span class="sb-nav-num">07</span>DISCOM Timelines</a>
+        <a href="#sales-pitch"      class="sb-nav-item"><span class="sb-nav-num">08</span>Sales Strategy</a>
+        <a href="#common-mistakes"  class="sb-nav-item"><span class="sb-nav-num">09</span>Common Mistakes</a>
+        <a href="#faq"              class="sb-nav-item"><span class="sb-nav-num">10</span>FAQ</a>
+      </div>
+    </div>
+    <div class="sb-box">
+      <div class="sb-title">Share This Post</div>
+      <div class="share-list">
+        <div class="share-item">
+          <div class="share-icon" style="background:#E8F4FD">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>Share on LinkedIn
+        </div>
+        <div class="share-item">
+          <div class="share-icon" style="background:#E8F4FD">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9BF0" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </div>Share on Twitter
+        </div>
+        <div class="share-item">
+          <div class="share-icon" style="background:#F0FDF4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>Share on WhatsApp
+        </div>
+        <div class="share-item">
+          <div class="share-icon" style="background:#FFF7ED">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          </div>Copy Link
+        </div>
+      </div>
+    </div>
+    <div class="sb-cta">
+      <h4>Manage Subsidy Applications With Solar CRM</h4>
+      <p>Track every PM Surya Ghar application, automate customer updates, and never miss a DISCOM deadline. Starting ₹9,999 — lifetime licence.</p>
+      <a href="#">Book a Free Demo →</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Solar CRM</strong> · India's Best Solar Project Management Software · Starting ₹9,999 Lifetime · No Monthly Fees</p>
+  <p style="margin-top:8px; font-size:12px;">Serving Solar Installers Across Maharashtra · Gujarat · Rajasthan · Tamil Nadu · Karnataka · Delhi NCR</p>
+</footer>
+
+<script>
+  // Reading progress
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const total = doc.scrollHeight - doc.clientHeight;
+    const pct = total > 0 ? Math.round((window.scrollY / total) * 100) : 0;
+    document.getElementById('prog').style.width = pct + '%';
+    document.getElementById('prog-label').textContent = pct + '% read';
+  });
+</script>
+</body>
+</html>
