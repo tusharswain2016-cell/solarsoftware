@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track Solar Installations End-to-End Without Spreadsheets | Solar Blog</title>
+<meta name="description" content="How Indian solar installation companies can replace chaotic spreadsheets with a single tracking system — from lead to commissioning to subsidy disbursement — and never lose a project update again.">
+<meta name="keywords" content="solar installation tracking India, solar project management software, solar CRM India, solar pipeline management, solar without spreadsheets, solar operations India 2026, rooftop solar project tracker">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #F97316;
+    --orange-dark: #C2410C;
+    --orange-light: #FED7AA;
+    --orange-pale: #FFF7ED;
+    --dark: #18160F;
+    --mid: #44403C;
+    --muted: #78716C;
+    --light: #A8A29E;
+    --border: #E7E5E4;
+    --bg: #FAFAF9;
+    --white: #ffffff;
+    --ink: #1C1917;
+    --green: #16A34A;
+    --green-pale: #F0FDF4;
+    --blue: #2563EB;
+    --blue-pale: #EFF6FF;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.8; }
+
+  .breadcrumb { max-width: 780px; margin: 0 auto; padding: 24px 24px 0; display: flex; gap: 6px; align-items: center; font-size: 12px; color: var(--light); flex-wrap: wrap; }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--orange); }
+
+  .post-hero { max-width: 780px; margin: 0 auto; padding: 32px 24px 0; }
+  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tag { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
+  .tag-primary { background: var(--orange-pale); color: var(--orange-dark); }
+  .tag-green   { background: var(--green-pale);  color: #166534; }
+  .tag-blue    { background: var(--blue-pale);   color: #1D4ED8; }
+
+  .post-title { font-family: 'Lora', serif; font-size: clamp(24px, 4vw, 42px); font-weight: 700; line-height: 1.25; color: var(--dark); margin-bottom: 18px; }
+  .post-title em { color: var(--orange); font-style: italic; }
+  .post-subtitle { font-size: clamp(15px, 2vw, 18px); color: var(--muted); font-weight: 300; line-height: 1.65; margin-bottom: 28px; max-width: 680px; }
+
+  .post-byline { display: flex; align-items: center; gap: 14px; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 36px; flex-wrap: wrap; }
+  .author-av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--orange-light), var(--orange)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: white; flex-shrink: 0; }
+  .byline-info { flex: 1; min-width: 160px; }
+  .author-name { font-size: 14px; font-weight: 600; color: var(--dark); }
+  .byline-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .byline-actions { display: flex; gap: 10px; }
+  .share-btn { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border); background: white; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: border-color .2s; }
+  .share-btn:hover { border-color: var(--orange); }
+
+  .hero-visual { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+  .hero-img-wrap { background: linear-gradient(135deg, #0A1628 0%, #0F2040 50%, #1A1205 100%); border-radius: 16px; height: 360px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .hero-grid-lines { position: absolute; inset: 0; opacity: .06; background-image: linear-gradient(var(--orange) 1px, transparent 1px), linear-gradient(90deg, var(--orange) 1px, transparent 1px); background-size: 40px 40px; }
+  .hero-glow { position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,0,.2) 0%, transparent 65%); }
+  .hero-glow2 { position: absolute; bottom: -40px; left: -40px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(19,136,8,.15) 0%, transparent 65%); }
+  .hero-center { position: relative; z-index: 2; text-align: center; padding: 0 16px; }
+  .hero-center-icon { width: 80px; height: 80px; border-radius: 20px; background: rgba(255,107,0,.15); border: 1px solid rgba(255,107,0,.4); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .hero-stat-row { display: flex; gap: 24px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+  .h-stat { text-align: center; }
+  .h-stat-num { font-family: 'Lora', serif; font-size: 28px; font-weight: 700; color: var(--orange); }
+  .h-stat-label { font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; }
+
+  .post-layout { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 280px; gap: 60px; padding: 48px 24px 80px; align-items: start; }
+  .post-body { max-width: 680px; }
+
+  .toc-box { background: var(--orange-pale); border: 1px solid var(--orange-light); border-left: 4px solid var(--orange); border-radius: 10px; padding: 20px 24px; margin-bottom: 36px; }
+  .toc-box h4 { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--orange-dark); margin-bottom: 12px; }
+  .toc-list { list-style: none; counter-reset: toc; }
+  .toc-list li { counter-increment: toc; padding: 5px 0; border-bottom: 1px dashed rgba(249,115,22,.2); }
+  .toc-list li:last-child { border-bottom: none; }
+  .toc-list li::before { content: counter(toc) ". "; color: var(--orange); font-weight: 600; font-size: 13px; }
+  .toc-list a { font-size: 14px; color: var(--mid); text-decoration: none; font-weight: 500; transition: color .2s; }
+  .toc-list a:hover { color: var(--orange); }
+
+  .post-body h2 { font-family: 'Lora', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 700; color: var(--dark); margin: 44px 0 16px; line-height: 1.35; padding-top: 8px; }
+  .post-body h3 { font-family: 'Lora', serif; font-size: clamp(17px, 2.5vw, 19px); font-weight: 600; color: var(--mid); margin: 32px 0 12px; line-height: 1.4; }
+  .post-body p { font-size: clamp(15px, 1.8vw, 16.5px); color: #3A3632; line-height: 1.85; margin-bottom: 20px; }
+  .post-body strong { color: var(--dark); font-weight: 600; }
+  .post-body ul, .post-body ol { padding-left: 22px; margin-bottom: 20px; }
+  .post-body li { font-size: clamp(14px, 1.8vw, 16px); color: #3A3632; line-height: 1.75; margin-bottom: 8px; }
+  .post-body li::marker { color: var(--orange); }
+
+  .pull-quote { border-left: 4px solid var(--orange); background: var(--orange-pale); padding: 20px 24px; border-radius: 0 10px 10px 0; margin: 32px 0; font-family: 'Lora', serif; font-size: clamp(16px, 2.5vw, 19px); font-style: italic; color: var(--mid); line-height: 1.6; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 32px 0; }
+  .stat-box { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 18px; text-align: center; }
+  .stat-box-num { font-family: 'Lora', serif; font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--orange); }
+  .stat-box-label { font-size: 12px; color: var(--muted); margin-top: 4px; font-weight: 500; }
+
+  .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0; }
+  .stage-card { border-radius: 12px; padding: 22px 18px; text-align: center; border: 2px solid; }
+  .stage-card.tier1 { background: #FFF7ED; border-color: var(--orange-light); }
+  .stage-card.tier2 { background: var(--green-pale); border-color: #86EFAC; }
+  .stage-card.tier3 { background: var(--blue-pale); border-color: #BFDBFE; }
+  .stage-card .s-kw { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px; }
+  .stage-card.tier1 .s-kw { color: var(--orange-dark); }
+  .stage-card.tier2 .s-kw { color: var(--green); }
+  .stage-card.tier3 .s-kw { color: var(--blue); }
+  .stage-card .s-amount { font-family: 'Lora', serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; margin-bottom: 6px; }
+  .stage-card.tier1 .s-amount { color: var(--orange); }
+  .stage-card.tier2 .s-amount { color: var(--green); }
+  .stage-card.tier3 .s-amount { color: var(--blue); }
+  .stage-card .s-label { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  .workflow-step { display: flex; gap: 18px; margin-bottom: 28px; padding: 20px 20px 20px 0; border-bottom: 1px solid var(--border); }
+  .workflow-step:last-child { border-bottom: none; }
+  .step-num { width: 40px; height: 40px; border-radius: 10px; background: var(--orange); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; margin-top: 3px; }
+  .step-content h4 { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+  .step-content p { font-size: 15px; color: var(--muted); margin: 0; }
+
+  .doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+  .doc-item { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 10px; }
+  .doc-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--green-pale); border: 1px solid #86EFAC; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .doc-text { font-size: 13px; color: var(--mid); line-height: 1.55; font-weight: 500; }
+
+  /* pipeline visual */
+  .pipeline-visual { margin: 32px 0; display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+  .pipe-stage { flex: 1; min-width: 100px; text-align: center; position: relative; }
+  .pipe-stage:not(:last-child)::after { content: ''; position: absolute; top: 20px; right: -1px; width: 2px; height: 24px; background: var(--border); z-index: 1; }
+  .pipe-box { background: white; border: 1px solid var(--border); border-radius: 10px 10px 0 0; padding: 14px 10px 10px; margin: 0 4px; }
+  .pipe-box.active { background: var(--orange-pale); border-color: var(--orange-light); border-bottom: 3px solid var(--orange); }
+  .pipe-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
+  .pipe-box.active .pipe-icon { background: var(--orange); }
+  .pipe-box:not(.active) .pipe-icon { background: var(--bg); border: 1px solid var(--border); }
+  .pipe-label { font-size: 11px; font-weight: 600; color: var(--mid); line-height: 1.3; }
+  .pipe-box.active .pipe-label { color: var(--orange-dark); }
+  .pipe-count { font-family: 'Lora', serif; font-size: 18px; font-weight: 700; color: var(--orange); margin-top: 4px; }
+  .pipe-arrow { display: flex; align-items: center; justify-content: center; padding: 0 2px; margin-top: 20px; color: var(--light); font-size: 18px; flex-shrink: 0; }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; -webkit-overflow-scrolling: touch; border-radius: 10px; border: 1px solid var(--border); }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
+  .data-table th { background: var(--orange-pale); color: var(--orange-dark); font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 12px 16px; text-align: left; border-bottom: 2px solid var(--orange-light); }
+  .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--mid); vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--orange-pale); }
+  .data-table td:first-child { font-weight: 600; color: var(--dark); }
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px; }
+  .badge-red { background: #FEE2E2; color: #991B1B; }
+  .badge-green { background: var(--green-pale); color: #166534; }
+  .badge-orange { background: var(--orange-pale); color: var(--orange-dark); }
+
+  .highlight-box { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin: 32px 0; }
+  .highlight-box h4 { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
+  .highlight-box ul { padding-left: 20px; margin: 0; }
+  .highlight-box li { font-size: 15px; color: var(--mid); margin-bottom: 8px; line-height: 1.65; }
+  .highlight-box li::marker { color: var(--orange); }
+
+  .alert-box { border-radius: 10px; padding: 18px 22px; margin: 24px 0; display: flex; gap: 14px; align-items: flex-start; }
+  .alert-box.warning { background: #FFFBEB; border: 1px solid #FDE68A; }
+  .alert-box.info    { background: var(--blue-pale); border: 1px solid #BFDBFE; }
+  .alert-box.success { background: var(--green-pale); border: 1px solid #86EFAC; }
+  .alert-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+  .alert-box.warning .alert-icon { background: #FEF3C7; }
+  .alert-box.info    .alert-icon { background: #DBEAFE; }
+  .alert-box.success .alert-icon { background: #DCFCE7; }
+  .alert-text { font-size: 14px; line-height: 1.7; }
+  .alert-box.warning .alert-text { color: #78350F; }
+  .alert-box.info    .alert-text { color: #1E3A5F; }
+  .alert-box.success .alert-text { color: #14532D; }
+  .alert-text strong { display: block; margin-bottom: 4px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+
+  .faq-list { margin: 24px 0; }
+  .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; overflow: hidden; background: white; }
+  .faq-q { padding: 16px 20px; font-size: 15px; font-weight: 600; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .faq-q:hover { color: var(--orange); }
+  .faq-arrow { width: 22px; height: 22px; border-radius: 50%; background: var(--orange-pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .25s; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--orange); }
+  .faq-item.open .faq-arrow svg { stroke: white; }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  .faq-item.open .faq-a { max-height: 300px; }
+  .faq-a-inner { padding: 0 20px 16px; font-size: 14px; color: var(--muted); line-height: 1.75; border-top: 1px solid var(--border); padding-top: 14px; }
+
+  .india-callout { background: linear-gradient(135deg, #0A1628, #0F2040); border-radius: 14px; padding: 28px 32px; margin: 36px 0; color: white; border: 1px solid rgba(255,107,0,.2); }
+  .india-callout h3 { font-family: 'Lora', serif; font-size: 20px; color: white; margin: 0 0 10px; font-style: italic; }
+  .india-callout p { font-size: 15px; color: rgba(255,255,255,.65); margin-bottom: 18px; }
+  .india-flag { display: flex; gap: 6px; flex-wrap: wrap; }
+  .state-pill { background: rgba(249,115,22,.15); border: 1px solid rgba(249,115,22,.3); color: var(--orange-light); font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+
+  .cta-box { background: var(--orange); border-radius: 14px; padding: 32px 28px; margin: 40px 0; text-align: center; color: white; }
+  .cta-box h3 { font-family: 'Lora', serif; font-size: clamp(18px, 3vw, 22px); margin-bottom: 10px; color: white; }
+  .cta-box p { font-size: 15px; opacity: .85; margin-bottom: 20px; }
+  .cta-box a { display: inline-block; background: white; color: var(--orange); font-weight: 700; font-size: 15px; padding: 12px 32px; border-radius: 8px; text-decoration: none; transition: opacity .2s; }
+  .cta-box a:hover { opacity: .9; }
+
+  .author-bio { border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; gap: 18px; margin-top: 48px; background: white; flex-wrap: wrap; }
+  .bio-av { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--orange-light), var(--orange)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; color: white; flex-shrink: 0; }
+  .bio-text h4 { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+  .bio-text p { font-size: 14px; color: var(--muted); line-height: 1.65; margin: 0; }
+
+  .post-tags { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .post-tags h5 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .tags-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+  .keyword-tag { background: var(--bg); border: 1px solid var(--border); color: var(--mid); font-size: 13px; padding: 5px 13px; border-radius: 6px; font-weight: 500; cursor: pointer; transition: all .2s; }
+  .keyword-tag:hover { background: var(--orange-pale); border-color: var(--orange-light); color: var(--orange-dark); }
+
+  .related-section { margin-top: 56px; padding-top: 40px; border-top: 2px solid var(--border); }
+  .related-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 10px; }
+  .related-header h2 { font-family: 'Lora', serif; font-size: clamp(20px, 3vw, 24px); color: var(--dark); font-weight: 700; }
+  .related-header a { font-size: 13px; font-weight: 600; color: var(--orange); text-decoration: none; display: flex; align-items: center; gap: 4px; transition: gap .2s; }
+  .related-header a:hover { gap: 8px; }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .rel-card { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; cursor: pointer; transition: border-color .2s, box-shadow .2s, transform .2s; display: flex; flex-direction: column; }
+  .rel-card:hover { border-color: var(--orange-light); box-shadow: 0 8px 28px rgba(249,115,22,.1); transform: translateY(-2px); }
+  .rel-thumb { height: 140px; display: flex; align-items: center; justify-content: center; }
+  .rel-thumb-icon { width: 56px; height: 56px; border-radius: 14px; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+  .rt1 { background: linear-gradient(135deg, #FFF7ED, #FED7AA44); }
+  .rt2 { background: linear-gradient(135deg, #F0FDF4, #BBF7D044); }
+  .rt3 { background: linear-gradient(135deg, #EFF6FF, #BFDBFE44); }
+  .rt4 { background: linear-gradient(135deg, #FDF4FF, #E9D5FF44); }
+  .rel-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+  .rel-cat { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+  .rel-body h4 { font-family: 'Lora', serif; font-size: 17px; color: var(--dark); line-height: 1.4; margin-bottom: 10px; font-weight: 600; }
+  .rel-body p { font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
+  .rel-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .rel-meta { font-size: 12px; color: var(--light); display: flex; align-items: center; gap: 5px; }
+  .rel-arrow { width: 28px; height: 28px; border-radius: 50%; background: var(--orange-pale); display: flex; align-items: center; justify-content: center; transition: background .2s; }
+  .rel-card:hover .rel-arrow { background: var(--orange); }
+  .rel-card:hover .rel-arrow svg { stroke: white; }
+
+  .sidebar { position: sticky; top: 24px; }
+  .sb-box { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 22px; margin-bottom: 22px; }
+  .sb-title { font-family: 'Lora', serif; font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .reading-prog { margin-bottom: 22px; }
+  .prog-bar-wrap { background: var(--border); border-radius: 4px; height: 4px; overflow: hidden; }
+  .prog-bar { height: 100%; background: var(--orange); border-radius: 4px; width: 0%; transition: width .3s; }
+  .prog-label { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .sb-nav-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .sb-nav-item { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; transition: border-color .2s, background .2s; font-size: 12px; font-weight: 500; color: var(--mid); line-height: 1.4; text-decoration: none; display: block; }
+  .sb-nav-item:hover { border-color: var(--orange-light); background: var(--orange-pale); color: var(--orange-dark); }
+  .sb-nav-num { font-size: 10px; font-weight: 700; color: var(--orange); margin-bottom: 3px; display: block; }
+  .share-list { display: flex; flex-direction: column; gap: 8px; }
+  .share-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; cursor: pointer; transition: background .2s; border: 1px solid var(--border); font-size: 13px; font-weight: 500; color: var(--mid); }
+  .share-item:hover { background: var(--bg); border-color: var(--orange-light); color: var(--dark); }
+  .share-icon { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sb-cta { background: linear-gradient(135deg, #0A1628, #0F2040); border-radius: 12px; padding: 22px; color: white; text-align: center; border: 1px solid rgba(255,107,0,.2); }
+  .sb-cta h4 { font-family: 'Lora', serif; font-size: 17px; color: white; margin-bottom: 8px; }
+  .sb-cta p { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 16px; line-height: 1.6; }
+  .sb-cta a { display: block; background: var(--orange); color: white; text-align: center; padding: 10px; border-radius: 7px; text-decoration: none; font-weight: 600; font-size: 14px; transition: background .2s; }
+  .sb-cta a:hover { background: var(--orange-dark); }
+
+  footer { background: var(--dark); color: rgba(255,255,255,.5); text-align: center; padding: 32px 24px; font-size: 13px; }
+  footer strong { color: var(--orange); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .post-hero, .hero-visual, .post-layout { animation: fadeUp .6s ease both; }
+  .post-layout { animation-delay: .15s; }
+
+  @media (max-width: 900px) {
+    .post-layout { grid-template-columns: 1fr; gap: 0; padding: 32px 16px 60px; }
+    .post-body { max-width: 100%; }
+    .sidebar { position: static; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .reading-prog { grid-column: 1 / -1; }
+    .sb-cta { grid-column: 1 / -1; }
+    .hero-img-wrap { height: 280px; }
+    .h-stat-num { font-size: 22px; }
+    .stage-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .breadcrumb { padding: 16px 16px 0; }
+    .post-hero { padding: 20px 16px 0; }
+    .hero-visual { padding: 0 16px; }
+    .hero-img-wrap { height: 210px; border-radius: 12px; }
+    .hero-center-icon { width: 56px; height: 56px; border-radius: 14px; }
+    .hero-center-icon svg { width: 28px; height: 28px; }
+    .hero-center > div:nth-child(2) { font-size: 15px !important; }
+    .hero-center > div:nth-child(3) { font-size: 11px !important; }
+    .hero-stat-row { gap: 14px; margin-top: 12px; }
+    .h-stat-num { font-size: 18px; }
+    .h-stat-label { font-size: 9px; }
+    .post-layout { padding: 20px 16px 48px; }
+    .stat-row { grid-template-columns: 1fr; gap: 10px; }
+    .stage-grid { grid-template-columns: 1fr; }
+    .doc-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+    .sidebar { grid-template-columns: 1fr; }
+    .sb-cta { grid-column: auto; }
+    .toc-box, .india-callout, .highlight-box, .cta-box { padding: 16px 18px; }
+    .cta-box a { display: block; text-align: center; }
+    .workflow-step { gap: 12px; padding-right: 0; }
+    .step-num { width: 34px; height: 34px; font-size: 13px; }
+    .author-bio { padding: 18px; gap: 12px; }
+    .bio-av { width: 52px; height: 52px; font-size: 16px; }
+    .post-byline { gap: 10px; }
+    .byline-actions { margin-left: auto; }
+    footer { font-size: 12px; padding: 24px 16px; }
+    .pipeline-visual { gap: 0; }
+    .pipe-arrow { display: none; }
+  }
+
+  @media (max-width: 380px) {
+    .sb-nav-grid { grid-template-columns: 1fr; }
+    .pull-quote { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Home</a> <span>/</span>
+  <a href="#">Blog</a> <span>/</span>
+  <span style="color:var(--muted)">Operations & CRM</span>
+</div>
+
+<!-- HERO -->
+<div class="post-hero">
+  <div class="hero-tags">
+    <span class="tag tag-primary">Operations</span>
+    <span class="tag tag-green">Project Tracking</span>
+    <span class="tag tag-blue">India Solar 2026</span>
+  </div>
+  <h1 class="post-title">Track Solar Installations <em>End-to-End Without Spreadsheets</em></h1>
+  <p class="post-subtitle">Most solar companies lose time, money, and customers not because their installations are bad — but because their tracking is. Here is how to move every project from lead to commissioning to subsidy disbursement in a single system that your whole team can see in real time.</p>
+  <div class="post-byline">
+    <div class="author-av">AK</div>
+    <div class="byline-info">
+      <div class="author-name">Arjun Kapoor — Head of Operations, Solar CRM</div>
+      <div class="byline-meta">April 30, 2026 &nbsp;·&nbsp; 13 min read &nbsp;·&nbsp; Updated for India Solar Market 2026</div>
+    </div>
+    <div class="byline-actions">
+      <div class="share-btn" title="Share on LinkedIn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </div>
+      <div class="share-btn" title="Share on Twitter">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+      </div>
+      <div class="share-btn" title="Copy link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO VISUAL -->
+<div class="hero-visual">
+  <div class="hero-img-wrap">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-center">
+      <div class="hero-center-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.5">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+      </div>
+      <div style="color:rgba(255,255,255,.9); font-family:'Lora',serif; font-size:20px; font-style:italic; margin-bottom:8px;">"Every installation. Every stage. One screen."</div>
+      <div style="color:rgba(255,255,255,.4); font-size:13px;">Solar CRM Operations Guide · India 2026 Edition</div>
+      <div class="hero-stat-row">
+        <div class="h-stat"><div class="h-stat-num">12+</div><div class="h-stat-label">Project Stages Tracked</div></div>
+        <div class="h-stat"><div class="h-stat-num">3×</div><div class="h-stat-label">Faster Install Cycles</div></div>
+        <div class="h-stat"><div class="h-stat-num">Zero</div><div class="h-stat-label">Dropped Follow-ups</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="post-layout">
+  <article class="post-body">
+
+    <div class="toc-box">
+      <h4>📋 In This Article</h4>
+      <ol class="toc-list">
+        <li><a href="#spreadsheet-problem">The Spreadsheet Problem: Why It Gets Worse as You Grow</a></li>
+        <li><a href="#what-tracking">What End-to-End Installation Tracking Actually Means</a></li>
+        <li><a href="#pipeline-stages">The 12 Stages Every Solar Installation Should Move Through</a></li>
+        <li><a href="#field-ops">Field Operations: Capturing What Happens on Site</a></li>
+        <li><a href="#discom-tracking">Tracking DISCOM Approvals Across Multiple States</a></li>
+        <li><a href="#subsidy-pipeline">The Subsidy Application Pipeline Within Your CRM</a></li>
+        <li><a href="#customer-comms">Automated Customer Communication at Every Milestone</a></li>
+        <li><a href="#manager-view">The Manager Dashboard: Real-Time Visibility Across All Projects</a></li>
+        <li><a href="#migration">Migrating From Spreadsheets: A Practical Transition Plan</a></li>
+        <li><a href="#metrics">The Operations Metrics That Top Solar Companies Track Weekly</a></li>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+      </ol>
+    </div>
+
+    <p>Ask any solar operations manager in India to open their project tracker right now, and here is what you will typically find: a Google Sheet with 200+ rows, last updated by someone three days ago, with columns for "Survey Done?", "DISCOM Approval Status", "Installation Date (Approx)", and a "Notes" column that contains a mix of WhatsApp messages, phone call summaries, and cryptic abbreviations that only one person understands.</p>
+
+    <p>Somewhere in that sheet is a customer who was promised an installation last week and has called three times for an update. Somewhere else is a DISCOM application that stalled because nobody followed up. And there are at least two customers whose subsidy disbursement is overdue because nobody updated the commissioning date on the portal.</p>
+
+    <p>This is not a discipline problem or a staffing problem. It is a systems problem — and it becomes a business-limiting problem the moment you try to scale from 30 installations a month to 80. This guide explains what proper end-to-end installation tracking looks like, why spreadsheets fundamentally cannot deliver it, and how to move to a system that keeps every project moving without manual chasing.</p>
+
+    <div class="pull-quote">
+      "The solar companies that scale past 50 installations a month are not the ones with the best panels or the most aggressive pricing. They are the ones whose operations run without constant firefighting — and that starts with tracking."
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-box-num">4.2 hrs</div><div class="stat-box-label">lost per week per manager to manual status chasing in spreadsheet-run solar companies</div></div>
+      <div class="stat-box"><div class="stat-box-num">23%</div><div class="stat-box-label">of PM Surya Ghar subsidy delays are caused by installer-side portal update failures</div></div>
+      <div class="stat-box"><div class="stat-box-num">1 in 8</div><div class="stat-box-label">solar installations has a significant documentation gap by the time it reaches commissioning</div></div>
+    </div>
+
+    <h2 id="spreadsheet-problem">The Spreadsheet Problem: Why It Gets Worse as You Grow</h2>
+
+    <p>Spreadsheets are not bad tools. For a solar company doing 10–15 installations a month, a well-structured Google Sheet can work reasonably well. The problem is that spreadsheets scale linearly with complexity — every new installation, every new team member, every new stage you need to track adds friction. At some point, the spreadsheet stops being a tool and starts being a liability.</p>
+
+    <p>The specific failure modes of spreadsheet-based tracking in solar operations are well-documented by companies that have moved away from them. Here are the four that cause the most damage:</p>
+
+    <div class="doc-grid">
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="doc-text"><strong>No single source of truth.</strong> Field engineers update WhatsApp. Office staff update the sheet. The manager checks both. They never quite match.</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="doc-text"><strong>No proactive alerts.</strong> A row sitting at "DISCOM Pending — 3 weeks" never shouts for attention. Follow-ups only happen when someone remembers to look.</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="doc-text"><strong>Documents live elsewhere.</strong> The Aadhaar copy is on someone's phone. The signed agreement is on Google Drive in a folder no one can find. The electricity bill was printed and filed.</div>
+      </div>
+      <div class="doc-item">
+        <div class="doc-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <div class="doc-text"><strong>No customer-facing visibility.</strong> The customer has no way to know their project status except by calling you — and every call is time your team cannot spend on installations.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-text">
+        <strong>The Scaling Cliff</strong>
+        Solar companies using spreadsheets reliably hit a wall between 40–60 active projects. Below that threshold, a smart operations person can hold the context in their head. Above it, projects start slipping through — DISCOM follow-ups missed, subsidy portals not updated, customers not notified. The cliff is not visible until you are already falling off it.
+      </div>
+    </div>
+
+    <h2 id="what-tracking">What End-to-End Installation Tracking Actually Means</h2>
+
+    <p>End-to-end tracking means that for every installation in your pipeline, you can answer these questions in under 30 seconds without making a single phone call:</p>
+
+    <ul>
+      <li>What stage is this project at right now?</li>
+      <li>Who is the assigned field engineer and what is their current workload?</li>
+      <li>What documents have been collected, and which are still missing?</li>
+      <li>Has the DISCOM application been submitted, and what is its current status?</li>
+      <li>When was the customer last contacted and what was the outcome?</li>
+      <li>Is anything blocking this project from moving to the next stage?</li>
+      <li>What is the next scheduled action and when?</li>
+    </ul>
+
+    <p>A spreadsheet cannot answer all of these questions reliably because it is a static data store — it only reflects what someone typed into it, and only as recently as the last time someone updated it. A purpose-built CRM answers all of them in real time because every action — document upload, stage change, WhatsApp message sent, site visit logged — automatically updates the central record.</p>
+
+    <h2 id="pipeline-stages">The 12 Stages Every Solar Installation Should Move Through</h2>
+
+    <p>The most important structural decision in your tracking system is defining your stages precisely. Vague stages like "In Progress" or "Pending" are useless — they tell you where a project is parked, not what needs to happen next. The stages below are used by high-performing solar CRM users across India and are tuned specifically for the PM Surya Ghar process:</p>
+
+    <div class="workflow-step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Lead Qualified</h4>
+        <p>The customer has been confirmed as eligible: residential owner-occupier, active DISCOM connection, no prior central subsidy. Basic system size scoped from electricity bill review. Site visit scheduled.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Site Survey Completed</h4>
+        <p>Field engineer has visited the site, assessed roof condition and orientation, confirmed shading analysis, photographed the installation area, and noted any structural or electrical concerns. Survey report uploaded to CRM on-site via mobile app.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Proposal Sent & Agreement Signed</h4>
+        <p>Detailed system design proposal shared with customer. Signed installation agreement collected (digitally or physically) and uploaded. Customer briefed on PM Surya Ghar process, timelines, and the fact that subsidy arrives after commissioning.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Documents Collected</h4>
+        <p>All KYC and subsidy documents collected: Aadhaar, PAN, bank passbook, property proof, electricity bill, passport photo. Every document uploaded to the project record in CRM. Document completeness checklist marked 100% before proceeding.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Portal Registration & DISCOM Application Submitted</h4>
+        <p>Customer registered on pmsuryaghar.gov.in. DISCOM feasibility application submitted with all required documents. Application reference number logged in CRM. Automated reminder set for DISCOM follow-up in 10 days.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h4>DISCOM Feasibility Approved</h4>
+        <p>DISCOM has granted feasibility approval — confirmed via portal. Approval date and reference logged. Installation scheduling triggered. Customer notified automatically via WhatsApp message.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <h4>Payment Received / Financing Confirmed</h4>
+        <p>Customer advance or full payment received and recorded. If financing, loan sanction letter uploaded and disbursement schedule noted. Invoice generated from CRM and sent to customer.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">8</div>
+      <div class="step-content">
+        <h4>Installation In Progress</h4>
+        <p>Panels, inverter, and mounting structure being installed. Field engineer logs daily progress photos via mobile CRM. Equipment serial numbers recorded. Estimated completion date visible to operations manager on dashboard.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">9</div>
+      <div class="step-content">
+        <h4>Installation Completed — Portal Updated</h4>
+        <p>Physical installation complete. Completion photos (timestamped) uploaded to CRM. National portal updated by operations team to trigger DISCOM inspection scheduling. Customer notified of completion.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">10</div>
+      <div class="step-content">
+        <h4>DISCOM Inspection Passed</h4>
+        <p>DISCOM technical officer has inspected the installation and confirmed compliance. Inspection date, officer name, and any snag items logged. If snags raised, remediation tracked as a sub-task before this stage is marked complete.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">11</div>
+      <div class="step-content">
+        <h4>Net Meter Installed & System Commissioned</h4>
+        <p>DISCOM has installed the bidirectional net meter. System is live and generating power. Commissioning certificate received and uploaded. Final balance invoice issued. Customer notified that subsidy disbursement is now in process.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">12</div>
+      <div class="step-content">
+        <h4>Subsidy Disbursed — Project Closed</h4>
+        <p>Customer confirms subsidy of ₹30,000–₹78,000 credited to their bank account. Project marked complete. Referral request sent automatically. Warranty documentation shared. Project archived with full audit trail.</p>
+      </div>
+    </div>
+
+    <h2 id="field-ops">Field Operations: Capturing What Happens on Site</h2>
+
+    <p>The biggest gap in most solar tracking systems is the last mile: what actually happens during the site survey and installation. Field engineers are not desk workers. They are on rooftops in 40-degree heat, dealing with structural surprises, equipment deliveries, and customers who have changed their minds about panel placement. Asking them to come back to the office and update a spreadsheet at the end of the day is a recipe for lost information.</p>
+
+    <p>The right solution is a mobile CRM that field engineers can update from their phones while they are still on site — or even while still on the roof. The workflow for a site survey should take under five minutes on a mobile device: open the job, tap through the site checklist, photograph the roof and electrical panel, note any issues in a voice memo or text field, and hit submit. The CRM instantly updates the project record, notifies the operations manager, and logs the timestamp and GPS location.</p>
+
+    <div class="highlight-box">
+      <h4>What a Field Engineer Should Capture On-Site — In the CRM, Not on Paper</h4>
+      <ul>
+        <li><strong>Site survey checklist:</strong> Roof type, condition, area available, shading obstacles, compass orientation, access constraints. Tick boxes rather than free text to ensure consistency across engineers.</li>
+        <li><strong>Timestamped geo-tagged photos:</strong> Roof overview, electrical meter location, proposed panel layout, any structural concerns. Photos attached directly to the project record — not sent via WhatsApp.</li>
+        <li><strong>Equipment serial numbers:</strong> Every panel and inverter serial number photographed or scanned during installation. This is essential for warranty claims and technical audits.</li>
+        <li><strong>Installation sign-off photo:</strong> Final completed installation photograph with clear visibility of all panels and the inverter, logged with timestamp as proof of completion date.</li>
+        <li><strong>Customer sign-off:</strong> Digital signature or photograph of the customer acknowledging installation completion — used to trigger the final balance invoice and portal update.</li>
+      </ul>
+    </div>
+
+    <h2 id="discom-tracking">Tracking DISCOM Approvals Across Multiple States</h2>
+
+    <p>For solar companies operating across multiple states — or even multiple districts within a single state — DISCOM approval tracking is the single most complex operational challenge. Each DISCOM has different portal interfaces, different processing timelines, different inspection procedures, and different escalation contacts. Managing this manually for 50+ active applications simultaneously is nearly impossible.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tracking Stage</th>
+            <th>What to Log in CRM</th>
+            <th>Auto-Alert Trigger</th>
+            <th>Escalation if Overdue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Application Submitted</td>
+            <td>Submission date, reference number, assigned DISCOM office</td>
+            <td>Remind team at 10 days if no approval</td>
+            <td>Follow-up call to DISCOM at 15 days</td>
+          </tr>
+          <tr>
+            <td>Feasibility Approved</td>
+            <td>Approval date, approved capacity, any conditions noted</td>
+            <td>Notify sales + ops immediately</td>
+            <td>N/A — completed stage</td>
+          </tr>
+          <tr>
+            <td>Inspection Requested</td>
+            <td>Portal notification date, inspection request reference</td>
+            <td>Remind team at 7 days if no inspection scheduled</td>
+            <td>Escalate to DISCOM RE dept. at 14 days</td>
+          </tr>
+          <tr>
+            <td>Inspection Completed</td>
+            <td>Date, officer name, outcome, any snags raised</td>
+            <td>Trigger snag remediation task if failed</td>
+            <td>Re-inspection request within 5 days of snag fix</td>
+          </tr>
+          <tr>
+            <td>Net Meter Applied</td>
+            <td>Application date, expected installation window</td>
+            <td>Remind team every 2 weeks until installed</td>
+            <td>Customer-facing update + DISCOM follow-up</td>
+          </tr>
+          <tr>
+            <td>Net Meter Installed</td>
+            <td>Installation date, meter serial number, bidirectional confirmed</td>
+            <td>Trigger commissioning certificate request</td>
+            <td>N/A — completed stage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The key insight here is that DISCOM tracking should be <strong>proactive, not reactive</strong>. Your CRM should alert your operations team when an application is approaching the upper end of the normal processing window — before the customer calls you to complain. The difference between a solar company that manages 100 active DISCOM applications and one that cannot manage 30 is almost entirely a question of whether these alerts exist and are acted on.</p>
+
+    <h2 id="subsidy-pipeline">The Subsidy Application Pipeline Within Your CRM</h2>
+
+    <p>PM Surya Ghar subsidy management deserves its own dedicated pipeline view within your CRM — separate from the broader installation pipeline — because the stakeholders and actions are different. The installation pipeline is primarily about your team's internal actions. The subsidy pipeline involves a three-way coordination between your company, the customer, and the government portal.</p>
+
+    <div class="stage-grid">
+      <div class="stage-card tier1">
+        <div class="s-kw">Portal Registration</div>
+        <div class="s-amount">Step 1</div>
+        <div class="s-label">Customer registered on pmsuryaghar.gov.in with consumer number and Aadhaar</div>
+      </div>
+      <div class="stage-card tier2">
+        <div class="s-kw">DISCOM Approved</div>
+        <div class="s-amount">Step 2</div>
+        <div class="s-label">Feasibility granted. Installation may proceed. Reference number logged.</div>
+      </div>
+      <div class="stage-card tier3">
+        <div class="s-kw">Post-Installation</div>
+        <div class="s-amount">Step 3</div>
+        <div class="s-label">Portal updated after installation. Inspection triggered by DISCOM.</div>
+      </div>
+    </div>
+
+    <div class="stage-grid">
+      <div class="stage-card tier1">
+        <div class="s-kw">Inspection Passed</div>
+        <div class="s-amount">Step 4</div>
+        <div class="s-label">DISCOM technical inspection cleared. Net meter installation queued.</div>
+      </div>
+      <div class="stage-card tier2">
+        <div class="s-kw">Commissioned</div>
+        <div class="s-amount">Step 5</div>
+        <div class="s-label">Net meter installed. Commissioning certificate issued and uploaded.</div>
+      </div>
+      <div class="stage-card tier3">
+        <div class="s-kw">Subsidy Disbursed</div>
+        <div class="s-amount">Step 6</div>
+        <div class="s-label">₹30,000–₹78,000 credited to customer's Aadhaar-linked bank account via DBT.</div>
+      </div>
+    </div>
+
+    <div class="alert-box success">
+      <div class="alert-icon">✅</div>
+      <div class="alert-text">
+        <strong>Why a Dedicated Subsidy Pipeline View Matters</strong>
+        Your operations manager should be able to open the subsidy pipeline and instantly see: how many customers are waiting for DISCOM approval, how many are pending inspection, how many are waiting for net meters, and how many have received their subsidy. This view makes it immediately obvious where the bottlenecks are — and gives you the data to set accurate customer expectations by state and DISCOM.
+      </div>
+    </div>
+
+    <h2 id="customer-comms">Automated Customer Communication at Every Milestone</h2>
+
+    <p>The most common complaint solar customers have — more common than technical issues, more common than cost surprises — is not knowing what is happening with their project. A PM Surya Ghar installation takes 8–20 weeks from start to subsidy disbursement. That is a long time to feel like you are waiting with no information.</p>
+
+    <p>The best solar companies have solved this entirely with automated milestone messages sent via WhatsApp in the customer's preferred language. Every time a project stage advances in the CRM, a pre-written message goes out automatically. No manual sending. No remembering. The customer feels informed, and your team's phone stops ringing with status enquiries.</p>
+
+    <div class="highlight-box">
+      <h4>The 8 WhatsApp Messages Every Solar Customer Should Receive Automatically</h4>
+      <ul>
+        <li><strong>Survey Scheduled:</strong> "Namaste [Name], our engineer [Engineer Name] will visit your home on [Date] at [Time] for the site survey. Please ensure roof access is available."</li>
+        <li><strong>DISCOM Application Submitted:</strong> "Your PM Surya Ghar application has been submitted to [DISCOM Name]. Reference: [Ref No.]. Approval typically takes [X–Y] days. We will update you as soon as it is approved."</li>
+        <li><strong>DISCOM Approved:</strong> "Great news, [Name]! Your DISCOM feasibility has been approved. We will now schedule your installation — our team will contact you within 2 working days."</li>
+        <li><strong>Installation Scheduled:</strong> "Your solar installation is confirmed for [Date]. Our team of [N] engineers will arrive by [Time]. Please keep the roof and electrical panel area accessible."</li>
+        <li><strong>Installation Completed:</strong> "Installation complete! Your [X] kWp system is ready. We have updated the government portal — the DISCOM inspection will be scheduled in the coming days."</li>
+        <li><strong>Inspection Passed:</strong> "Your installation has passed the DISCOM technical inspection. Net meter installation is now being processed — this is the final step before subsidy disbursement."</li>
+        <li><strong>System Commissioned:</strong> "Your solar system is now officially commissioned and generating clean energy! Your subsidy of ₹[Amount] will be credited to your bank account within 30 days."</li>
+        <li><strong>Subsidy Disbursed:</strong> "Excellent news! Your PM Surya Ghar subsidy of ₹[Amount] has been credited to your bank account. Thank you for going solar with us — could you share your experience with your neighbours?"</li>
+      </ul>
+    </div>
+
+    <h2 id="manager-view">The Manager Dashboard: Real-Time Visibility Across All Projects</h2>
+
+    <p>A solar operations manager running 60–100 active projects needs a dashboard that shows the complete state of the business in a single view — without opening individual project records or reading through status update messages. The right dashboard answers the questions that actually matter for running the business effectively.</p>
+
+    <p>The most valuable views for a solar operations manager are: a <strong>stage funnel</strong> showing how many projects are at each of the 12 installation stages; a <strong>stalled projects list</strong> showing any project that has not moved stage in more than 7 days (colour-coded red after 14 days); a <strong>DISCOM pending queue</strong> organised by state with days-since-submission visible; an <strong>upcoming installations calendar</strong> showing confirmed installation dates and engineer assignments for the next 14 days; and a <strong>subsidy disbursement tracker</strong> showing outstanding subsidy amounts and estimated credit dates for all commissioned projects.</p>
+
+    <div class="india-callout">
+      <h3>From 30 to 120 Installations a Month — Without Extra Staff 🇮🇳</h3>
+      <p>The solar companies that have scaled fastest in the PM Surya Ghar era are not the ones that hired the most people — they are the ones whose systems handled the complexity so their people could focus on quality. Solar CRM's pipeline tracking, automated alerts, and manager dashboard are built specifically for the Indian solar installation workflow, and are actively used by growing teams across every major state:</p>
+      <div class="india-flag">
+        <span class="state-pill">Maharashtra</span>
+        <span class="state-pill">Gujarat</span>
+        <span class="state-pill">Rajasthan</span>
+        <span class="state-pill">Tamil Nadu</span>
+        <span class="state-pill">Karnataka</span>
+        <span class="state-pill">Uttar Pradesh</span>
+        <span class="state-pill">Madhya Pradesh</span>
+        <span class="state-pill">Telangana</span>
+        <span class="state-pill">Punjab</span>
+        <span class="state-pill">Delhi NCR</span>
+      </div>
+    </div>
+
+    <h2 id="migration">Migrating From Spreadsheets: A Practical Transition Plan</h2>
+
+    <p>The biggest fear solar companies have about moving away from spreadsheets is the migration itself — the idea that it will take weeks, require a technical consultant, and disrupt operations during the transition. In practice, a well-planned migration to a solar CRM takes 3–5 working days and can be done while operations continue in parallel.</p>
+
+    <div class="workflow-step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Day 1: Export and Clean Your Existing Data</h4>
+        <p>Export your current spreadsheet to CSV. Clean up duplicates and inconsistencies — standardise customer names, phone numbers (with country code), and project stages against your new 12-stage pipeline. This cleaning process typically surfaces 10–15% of records that were duplicated or mislabelled in the old system.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Day 2: Configure Your Pipeline and Custom Fields</h4>
+        <p>Set up your 12-stage pipeline in Solar CRM. Add any custom fields specific to your operations: DISCOM reference number, system size (kWp), panel brand, inverter model, engineer assigned. Configure role-based access so field engineers, sales staff, and accounts see the fields relevant to them.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Day 3: Import Existing Projects and Assign Stages</h4>
+        <p>Import your cleaned CSV into Solar CRM. For each active project, verify the stage assignment — this is the most time-consuming part, but it is also the moment when you will discover projects that were misclassified or stuck in the old system. Many companies find 5–10 projects they had lost track of entirely.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>Day 4: Train Your Team — Sales, Field, Operations</h4>
+        <p>Run a 60-minute training session for each team group: sales on lead management and proposal tracking; field engineers on the mobile app and site checklist; operations on DISCOM tracking and the manager dashboard. Solar CRM's mobile app is designed to be usable without training — but a structured session reduces resistance and ensures consistent usage from day one.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Day 5: Go Live — Spreadsheet as Read-Only Archive</h4>
+        <p>From this day forward, all new updates go into Solar CRM. The old spreadsheet is kept as a read-only archive for historical reference but is no longer updated. Enforce this clearly with the team — the most common migration failure is people continuing to update both systems for "safety," which immediately creates the same confusion the migration was designed to eliminate.</p>
+      </div>
+    </div>
+
+    <h2 id="metrics">The Operations Metrics That Top Solar Companies Track Weekly</h2>
+
+    <p>Moving to a CRM does not just solve the tracking problem — it gives you data you never had before. The solar companies using their operations data most effectively track these metrics on a weekly basis and use them to make specific, evidence-based decisions:</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>What It Tells You</th>
+            <th>Target / Benchmark</th>
+            <th>Action if Off-Track</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Survey-to-Close Rate</td>
+            <td>% of site surveys that convert to signed agreements</td>
+            <td>60–75% for residential solar</td>
+            <td>Review proposal quality and pricing; retrain sales on objection handling</td>
+          </tr>
+          <tr>
+            <td>Average Days: Survey to Installation</td>
+            <td>End-to-end elapsed time from first site visit to installation start</td>
+            <td>Under 30 days in fast DISCOMs</td>
+            <td>Identify bottleneck stage — document collection or DISCOM approval?</td>
+          </tr>
+          <tr>
+            <td>DISCOM Approval Rate (First Attempt)</td>
+            <td>% of applications approved without rejection or resubmission</td>
+            <td>Above 90%</td>
+            <td>Audit rejected applications for common document errors</td>
+          </tr>
+          <tr>
+            <td>Inspection Pass Rate (First Attempt)</td>
+            <td>% of installations passing DISCOM technical inspection first time</td>
+            <td>Above 95%</td>
+            <td>Review equipment compliance and installation checklist adherence</td>
+          </tr>
+          <tr>
+            <td>Average Days: Install to Subsidy</td>
+            <td>Time from installation completion to subsidy credit</td>
+            <td>60–90 days (state-dependent)</td>
+            <td>Track net meter wait times by DISCOM; escalate chronic outliers</td>
+          </tr>
+          <tr>
+            <td>Outstanding Subsidy Value</td>
+            <td>Total ₹ value of subsidies in the pipeline not yet disbursed</td>
+            <td>Track trend — should not grow indefinitely</td>
+            <td>Identify and unblock stalled commissioned projects</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          We are only doing 20 installations a month — do we really need a CRM?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">At 20 installations a month, a spreadsheet can work — but you are almost certainly already losing some efficiency to manual chasing, missed follow-ups, and documents being in the wrong place. The more important question is: do you want to grow? If you plan to scale to 50+ installations a month, the systems you build at 20 will either enable or limit that growth. Companies that start with a CRM at 20 installations a month scale 2–3× faster than those that wait until the pain is unbearable at 60.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          My field engineers are not tech-savvy. Will they actually use a mobile CRM?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">This is the most common concern, and the data consistently shows it is not the barrier people expect. Field engineers who use smartphones for WhatsApp — which is essentially all of them — can use a well-designed mobile CRM app within a week. The key is making the CRM simpler than the alternative: photographing a document and tapping "upload" in the app is easier than photographing it and sending it to five different WhatsApp groups. The trick is ensuring the app is genuinely mobile-first — not a desktop interface squeezed onto a phone screen.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How do we handle projects that don't follow the standard 12-stage flow?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Every solar installation business has edge cases — inspection failures, customers who need the system upsized after installation, housing society complications, equipment supply delays. A good CRM handles these through sub-tasks, notes, and the ability to move stages non-linearly when needed. The pipeline defines the normal flow; exceptions are handled through task management within the project record. The goal is not rigid stage adherence — it is full visibility into where each project is and what is blocking it.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can the CRM track projects in multiple states with different DISCOMs?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes — and this is where a CRM specifically built for Indian solar operations delivers the most value. The manager dashboard can filter all projects by state, by DISCOM, by district, or by assigned engineer, giving you a state-specific view of your pipeline at any time. DISCOM-specific approval timelines can be configured as benchmarks so the auto-alert thresholds are appropriate for each state: 14 days for Gujarat, 30 days for UP.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What happens to our historical data when we migrate?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Your historical data — completed projects, old customer records, past invoices — should be imported into the CRM during migration and marked as completed or archived. This gives you searchable records for warranty claims, referral tracking, and customer reactivation campaigns without cluttering your active pipeline view. Most solar companies find that their historical data is more valuable once it is in a searchable, structured CRM than it ever was sitting in a spreadsheet that nobody opened.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How long before we see a real improvement in project cycle time?
+          <div class="faq-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Most solar companies see measurable improvement in project cycle time within the first 60 days after full CRM adoption. The biggest early gains come from document collection — completing this before installation rather than chasing it afterward eliminates the most common source of DISCOM application delays. Teams report saving 3–5 hours per week per operations staff member within the first month, and 10–15% reduction in average days from survey to commissioning within 90 days.</div></div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>Replace Your Spreadsheet With a Pipeline That Actually Works</h3>
+      <p>Solar CRM tracks every installation across all 12 stages, sends automated WhatsApp updates in regional languages, alerts your team before DISCOM deadlines are missed, and gives your manager real-time visibility across every active project. Join 500+ solar companies across India. Starting ₹9,999 — lifetime, no monthly fees.</p>
+      <a href="#">Book a Free Demo Today →</a>
+    </div>
+
+    <!-- AUTHOR BIO -->
+    <div class="author-bio">
+      <div class="bio-av">AK</div>
+      <div class="bio-text">
+        <h4>Arjun Kapoor — Head of Operations, Solar CRM</h4>
+        <p>Arjun spent six years running field operations for one of Maharashtra's largest solar installation companies before joining Solar CRM to build the operations module. He has direct experience managing 80+ concurrent PM Surya Ghar projects and brings a practitioner's perspective to everything Solar CRM builds for installation teams.</p>
+      </div>
+    </div>
+
+    <!-- TAGS -->
+    <div class="post-tags">
+      <h5>Keywords &amp; Topics</h5>
+      <div class="tags-cloud">
+        <span class="keyword-tag">Solar Installation Tracking India</span>
+        <span class="keyword-tag">Solar Project Management 2026</span>
+        <span class="keyword-tag">Solar CRM India</span>
+        <span class="keyword-tag">Replace Solar Spreadsheets</span>
+        <span class="keyword-tag">Solar Pipeline Management</span>
+        <span class="keyword-tag">DISCOM Approval Tracking</span>
+        <span class="keyword-tag">PM Surya Ghar Operations</span>
+        <span class="keyword-tag">Solar Field Engineer App India</span>
+        <span class="keyword-tag">Solar Operations Software</span>
+        <span class="keyword-tag">Solar Business Scaling India</span>
+        <span class="keyword-tag">Solar WhatsApp Automation</span>
+        <span class="keyword-tag">Rooftop Solar Project Tracker</span>
+      </div>
+    </div>
+
+    <!-- RELATED -->
+    <div class="related-section">
+      <div class="related-header">
+        <h2>You May Also Like</h2>
+        <a href="#">View all articles →</a>
+      </div>
+      <div class="related-grid">
+        <div class="rel-card">
+          <div class="rel-thumb rt1">
+            <div class="rel-thumb-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+          </div>
+          <div class="rel-body">
+            <div class="rel-cat">Government Policy</div>
+            <h4>PM Surya Ghar Yojana: What Solar Installers Need to Know</h4>
+            <p>The complete operational guide to India's flagship rooftop solar subsidy scheme — subsidy amounts, eligibility, DISCOM navigation, and closing more deals.</p>
+            <div class="rel-footer">
+              <div class="rel-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>12 min read · Apr 30</div>
+              <div class="rel-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-thumb rt2">
+            <div class="rel-thumb-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+          </div>
+          <div class="rel-body">
+            <div class="rel-cat" style="color:#16A34A">Data Security</div>
+            <h4>Bank-Grade Security for Your Solar Business Data</h4>
+            <p>How to protect customer Aadhaar, PAN, and bank details with enterprise-level encryption, access controls, and DPDPA compliance — without enterprise cost.</p>
+            <div class="rel-footer">
+              <div class="rel-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>11 min read · Apr 30</div>
+              <div class="rel-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-thumb rt3">
+            <div class="rel-thumb-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+          </div>
+          <div class="rel-body">
+            <div class="rel-cat" style="color:#2563EB">Team & Operations</div>
+            <h4>Building a High-Performance Solar Sales Team in India 2026</h4>
+            <p>Hiring, training, and commission structures that top solar companies across Maharashtra and Gujarat swear by.</p>
+            <div class="rel-footer">
+              <div class="rel-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>11 min read · Apr 27</div>
+              <div class="rel-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-thumb rt4">
+            <div class="rel-thumb-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9333EA" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+          </div>
+          <div class="rel-body">
+            <div class="rel-cat" style="color:#9333EA">Finance</div>
+            <h4>Solar Invoicing &amp; Payment Collection: Stop Chasing Clients</h4>
+            <p>How to automate GST invoicing, send smart reminders, and cut your receivables by 50% without a single awkward follow-up call.</p>
+            <div class="rel-footer">
+              <div class="rel-meta"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10 min read · Apr 29</div>
+              <div class="rel-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="reading-prog">
+      <div class="prog-bar-wrap"><div class="prog-bar" id="prog"></div></div>
+      <div class="prog-label" id="prog-label">0% read</div>
+    </div>
+    <div class="sb-box">
+      <div class="sb-title">On This Page</div>
+      <div class="sb-nav-grid">
+        <a href="#spreadsheet-problem" class="sb-nav-item"><span class="sb-nav-num">01</span>Spreadsheet Problem</a>
+        <a href="#what-tracking"       class="sb-nav-item"><span class="sb-nav-num">02</span>What Tracking Means</a>
+        <a href="#pipeline-stages"     class="sb-nav-item"><span class="sb-nav-num">03</span>12 Stages</a>
+        <a href="#field-ops"           class="sb-nav-item"><span class="sb-nav-num">04</span>Field Operations</a>
+        <a href="#discom-tracking"     class="sb-nav-item"><span class="sb-nav-num">05</span>DISCOM Tracking</a>
+        <a href="#subsidy-pipeline"    class="sb-nav-item"><span class="sb-nav-num">06</span>Subsidy Pipeline</a>
+        <a href="#customer-comms"      class="sb-nav-item"><span class="sb-nav-num">07</span>Auto Messaging</a>
+        <a href="#manager-view"        class="sb-nav-item"><span class="sb-nav-num">08</span>Manager Dashboard</a>
+        <a href="#migration"           class="sb-nav-item"><span class="sb-nav-num">09</span>Migration Plan</a>
+        <a href="#metrics"             class="sb-nav-item"><span class="sb-nav-num">10</span>Key Metrics</a>
+      </div>
+    </div>
+    <div class="sb-box">
+      <div class="sb-title">Share This Post</div>
+      <div class="share-list">
+        <div class="share-item">
+          <div class="share-icon" style="background:#E8F4FD">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>Share on LinkedIn
+        </div>
+        <div class="share-item">
+          <div class="share-icon" style="background:#E8F4FD">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D9BF0" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </div>Share on Twitter
+        </div>
+        <div class="share-item">
+          <div class="share-icon" style="background:#F0FDF4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>Share on WhatsApp
+        </div>
+        <div class="share-item">
+          <div class="share-icon" style="background:#FFF7ED">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          </div>Copy Link
+        </div>
+      </div>
+    </div>
+    <div class="sb-cta">
+      <h4>Track Every Installation Without the Chaos</h4>
+      <p>12-stage pipeline, DISCOM alert system, automated WhatsApp updates, and a real-time manager dashboard. Starting ₹9,999 — lifetime licence.</p>
+      <a href="#">Book a Free Demo →</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Solar CRM</strong> · India's Best Solar Project Management Software · Starting ₹9,999 Lifetime · No Monthly Fees</p>
+  <p style="margin-top:8px; font-size:12px;">Serving Solar Installers Across Maharashtra · Gujarat · Rajasthan · Tamil Nadu · Karnataka · Delhi NCR</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const total = doc.scrollHeight - doc.clientHeight;
+    const pct = total > 0 ? Math.round((window.scrollY / total) * 100) : 0;
+    document.getElementById('prog').style.width = pct + '%';
+    document.getElementById('prog-label').textContent = pct + '% read';
+  });
+</script>
+</body>
+</html>
